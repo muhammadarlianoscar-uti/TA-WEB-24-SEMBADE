@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f0fdf4; /* hijau sangat muda */
+  --foreground: #064e3b; /* hijau tua elegan */
 }
 
 @theme inline {
@@ -14,13 +14,75 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #022c22; /* dark green */
+    --foreground: #d1fae5;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Gunakan variabel font dari Next.js agar serasi dengan layout.tsx */
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* HEADER SMARTDES */
+header {
+  background: linear-gradient(to right, #4ade80, #22c55e);
+  color: #ffffff;
+  padding: 1em 2em;
+  height: 80px;
+  display: flex;
+  justify-content: space-between; /* Logo kiri, teks kanan */
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ecfdf5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* FOOTER SMART CITY */
+footer {
+  background: linear-gradient(to right, #86efac, #4ade80);
+  color: #064e3b;
+  padding: 1.5em;
+  text-align: center;
+  position: relative;
+  margin-top: 3em;
+  font-weight: 500;
+}
+
+/* CONTENT */
+.content {
+  /* Pastikan konten memiliki padding/margin agar tidak menempel ke pinggir */
+  max-width: 1200px;
+  margin: 2.5em auto; /* Tengah secara horizontal */
+  padding: 0 1.5em;
+  color: #065f46;
+  text-align: justify;
+  line-height: 1.7;
+}
+
+/* UTIL */
+.text-border {
+  text-decoration: underline;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
 }
