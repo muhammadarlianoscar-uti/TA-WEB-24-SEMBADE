@@ -49,6 +49,7 @@ export default function RootLayout({
           <Link href="/">Profil</Link>
           <Link href="/">Pelayanan</Link>
           <Link href="/">Potensi</Link>
+          <Link href="/">Berita</Link>
 
         </nav>
 
