@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Navbar from "./components/navbar";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,15 +46,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* NAVBAR */}
-        <nav className="bg-green-400 p-4 flex gap-4">
-          <Link href="/">Home</Link>
-          <Link href="/">Profil</Link>
-          <Link href="/">Pelayanan</Link>
-          <Link href="/">Potensi</Link>
-          <Link href="/">Berita</Link>
-
-        </nav>
+        <Navbar />
 
         <main className="content">
           {children}
