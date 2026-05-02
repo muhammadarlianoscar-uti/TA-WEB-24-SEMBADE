@@ -13,47 +13,9 @@ export default function Menu() {
     <nav className="mt-5 mx-10 flex flex-col sm:flex-row justify-start text-center">
       <Link
         href="/"
-        className={`sm:bg-white md:bg-amber-300 bg-gray-300 hover:bg-red-700 text-red-700 hover:text-white px-[45px] 
-        py-2.5 rounded-full cursor-pointer border-2 border-red-700 border sm:w-40 w-full`}
+        className="bg-green-400 hover:bg-green-500 text-white px-6 py-2 rounded-full border border-green-600 transition"
       >
         {path_name}
-      </Link>
-
-      <Link
-        href="/berita"
-        className={`bg-white hover:bg-red-700 text-red-700 hover:text-white px-[45px] 
-        py-2.5 rounded-full cursor-pointer border-2 border-red-700 border sm:mx-2.5 sm:my-0 mx-0 my-2.5 sm:w-40 w-full`}
-      >
-        berita
-      </Link>
-
-      <Link
-        href="/pelayanan"
-        className={`bg-white hover:bg-red-700 text-red-700 hover:text-white px-[45px] 
-        py-2.5 rounded-full cursor-pointer border-2 border-red-700 border sm:w-40 w-full`}
-      >
-        pelayanan
-      </Link>
-      <Link
-        href="/pengaduan"
-        className={`bg-white hover:bg-red-700 text-red-700 hover:text-white px-[45px] 
-        py-2.5 rounded-full cursor-pointer border-2 border-red-700 border sm:w-40 w-full`}
-      >
-        pengaduan
-      </Link>
-      <Link
-        href="/potensi"
-        className={`bg-white hover:bg-red-700 text-red-700 hover:text-white px-[45px] 
-        py-2.5 rounded-full cursor-pointer border-2 border-red-700 border sm:w-40 w-full`}
-      >
-        potensi
-      </Link>
-      <Link
-        href="/profil"
-        className={`bg-white hover:bg-red-700 text-red-700 hover:text-white px-[45px] 
-        py-2.5 rounded-full cursor-pointer border-2 border-red-700 border sm:w-40 w-full`}
-      >
-        profil
       </Link>
     </nav>
   );

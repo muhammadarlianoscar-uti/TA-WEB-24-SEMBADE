@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +29,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header>
-          {/* SISI KIRI: Logo */}
           <div className="logo-container">
             <img 
               src="/images/logo.webp" 
@@ -38,13 +38,16 @@ export default function RootLayout({
             />
           </div>
 
-          {/* SISI KANAN: Teks */}
           <div className="header-right">
             <span className="header-title">SmartDes</span>
           </div>
         </header>
 
-        {/* Gunakan main untuk membungkus isi konten utama */}
+        {/* NAVBAR */}
+        <nav className="bg-green-400 p-4 flex gap-4">
+          <Link href="/">Home</Link>
+        </nav>
+
         <main className="content">
           {children}
         </main>
