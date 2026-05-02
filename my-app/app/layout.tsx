@@ -46,6 +46,8 @@ export default function RootLayout({
         {/* NAVBAR */}
         <nav className="bg-green-400 p-4 flex gap-4">
           <Link href="/">Home</Link>
+          <Link href="/">Profil</Link>
+
         </nav>
 
         <main className="content">
