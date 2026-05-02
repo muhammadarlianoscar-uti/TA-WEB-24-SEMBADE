@@ -47,6 +47,7 @@ export default function RootLayout({
         <nav className="bg-green-400 p-4 flex gap-4">
           <Link href="/">Home</Link>
           <Link href="/">Profil</Link>
+          <Link href="/">Pelayanan</Link>
 
         </nav>
 
