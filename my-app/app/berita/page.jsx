@@ -46,12 +46,22 @@ export default function berita() {
                 className="object-cover"
               />
             </div>
-    </div>
-  ))}
-</div>
-</main>
-);
+
+   {/* FOOTER CARD */}
+              <div className="flex justify-between items-center mt-5 text-sm text-gray-500">
+                <div>
+                  <p>kerja bakti pada desa</p>
+                  <p>Dilihat 100 {item.views} kali</p>
+                </div>
+              </div>
+            </div>
+        ))}
+      </div>
+
+    </main>
+  );
 }
+
 
 
       
