@@ -7,6 +7,8 @@ const beritaData = [
   { id: 4, judul: "Festival Desa" },
 ];
 
+import Image from "next/image";
+
 export default function berita() {
   return (
     <main className="bg-gray-100 min-h-screen px-6 py-10">
@@ -24,23 +26,31 @@ export default function berita() {
 
       {/* GRID BERITA */}
       <div className="max-w-7xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-  {beritaData.map((item) => (
-    <div
+      {beritaData.map((item) => (
+      <div
       key={item.id}
-      className="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition"
-    >
+      className="bg-white rounded-2xl shadow-md p-5 hover:shadow-xl transition">
       <h2 className="text-lg font-bold text-green-600">
         {item.judul}
       </h2>
       <p className="text-gray-500 mt-2 text-sm">
         Informasi terbaru seputar desa.
       </p>
+
+      {/* IMAGE */}
+            <div className="relative w-full h-52">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                className="object-cover"
+              />
+            </div>
     </div>
   ))}
 </div>
-
-    </main>
-  );
+</main>
+);
 }
 
 
