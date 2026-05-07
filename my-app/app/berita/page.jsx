@@ -1,11 +1,16 @@
 import React from 'react'
 
 const beritaData = [
-  { id: 1, judul: "Pembangunan Jalan Desa" },
-  { id: 2, judul: "Gotong Royong Warga" },
-  { id: 3, judul: "Pelatihan UMKM" },
-  { id: 4, judul: "Festival Desa" },
+  {
+    id: 1,
+    title: "Gotong Royong Warga Desa Kersik Membersihkan Lingkungan",
+    desc: "Warga Desa Kersik melakukan kegiatan gotong royong untuk menjaga kebersihan lingkungan dan meningkatkan kenyamanan masyarakat.",
+    image: "/images/berita1.jpg",
+    views: 120,
+    date: "07 Mei 2026",
+  },
 ];
+
 
 import Image from "next/image";
 
@@ -47,11 +52,11 @@ export default function berita() {
               />
             </div>
 
-   {/* FOOTER CARD */}
-              <div className="flex justify-between items-center mt-5 text-sm text-gray-500">
-                <div>
-                  <p>kerja bakti pada desa</p>
-                  <p>Dilihat 100 {item.views} kali</p>
+      {/* FOOTER CARD */}
+            <div className="flex justify-between items-center mt-5 text-sm text-gray-500">
+              <div>
+                <p>administrator</p>
+                 <p>Dilihat {item.views} kali</p>
                 </div>
               </div>
             </div>
