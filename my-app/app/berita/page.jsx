@@ -9,6 +9,46 @@ const beritaData = [
     views: 120,
     date: "07 Mei 2026",
   },
+  {
+    id: 2,
+    title: "Pelatihan Teknologi SmartDes untuk Pemuda Desa",
+    desc: "Pemerintah desa mengadakan pelatihan teknologi digital dan smart village untuk meningkatkan kemampuan pemuda desa.",
+    image: "/images/berita2.jpg",
+    views: 98,
+    date: "05 Mei 2026",
+  },
+  {
+    id: 3,
+    title: "Peresmian Taman Hijau sebagai Ruang Publik Desa",
+    desc: "Taman hijau baru resmi dibuka untuk masyarakat sebagai tempat rekreasi dan area edukasi lingkungan.",
+    image: "/images/berita3.jpg",
+    views: 150,
+    date: "03 Mei 2026",
+  },
+  {
+    id: 4,
+    title: "Peningkatan Jalan Desa untuk Akses Masyarakat",
+    desc: "Pembangunan dan perbaikan jalan desa dilakukan untuk memperlancar aktivitas warga dan distribusi hasil pertanian.",
+    image: "/images/berita4.jpg",
+    views: 87,
+    date: "01 Mei 2026",
+  },
+  {
+    id: 5,
+    title: "Festival Budaya Desa Kersik Berlangsung Meriah",
+    desc: "Festival budaya tahunan menghadirkan berbagai pertunjukan seni tradisional dan bazar UMKM masyarakat desa.",
+    image: "/images/berita5.jpg",
+    views: 210,
+    date: "28 April 2026",
+  },
+  {
+    id: 6,
+    title: "Program Penghijauan untuk Mendukung Smart City",
+    desc: "Pemerintah desa bersama masyarakat melakukan penanaman pohon untuk menciptakan lingkungan yang lebih hijau dan sehat.",
+    image: "/images/berita6.jpg",
+    views: 175,
+    date: "25 April 2026",
+  },
 ];
 
 
