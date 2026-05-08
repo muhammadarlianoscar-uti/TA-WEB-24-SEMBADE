@@ -31,16 +31,8 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* membuat header  */}
         <header>
-          <div className="logo-container">
-            <img 
-              src="/images/logo.webp" 
-              width="200" 
-              height="40" 
-              alt="SmartDes Logo" 
-            />
-          </div>
-
           <div className="header-right">
             <span className="header-title">SmartDes</span>
           </div>
@@ -51,7 +43,7 @@ export default function RootLayout({
         <main className="content">
           {children}
         </main>
-
+        {/* membuat footer */}
         <footer>Copyright &copy; SMARTDES 2026</footer>
       </body>
     </html>
