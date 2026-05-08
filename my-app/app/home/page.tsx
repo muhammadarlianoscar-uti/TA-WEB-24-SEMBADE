@@ -1,35 +1,37 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    // Wrapper utama dengan background Putih Tulang dari tema Modern Nature
     <div className="min-h-screen bg-slate-50 text-slate-800">
       
-      {/* ================= SECTION 1: HERO BANNER ================= */}
-      <section className="relative bg-gradient-to-br from-emerald-700 to-emerald-900 py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Dekorasi Lingkaran Abstrak di Background */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-          <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-white blur-3xl"></div>
-          <div className="absolute bottom-10 right-10 w-72 h-72 rounded-full bg-emerald-400 blur-3xl"></div>
-        </div>
+      {/* ================= SECTION 1: HERO BANNER (PARALLAX + OVERLAY) ================= */}
+      <section className="relative py-32 px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[80vh]">
+        {/* Latar Belakang Parallax */}
+        {/* Pastikan kamu memiliki foto hero-bg.jpg di folder public/images/ */}
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+          style={{ backgroundImage: "url('/images/bghome.webp')" }}
+        ></div>
+        
+        {/* Gradient Overlay agar teks tetap terbaca */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-emerald-900/80 via-emerald-900/70 to-slate-50"></div>
 
-        <div className="max-w-7xl mx-auto text-center relative z-10">
+        <div className="max-w-7xl mx-auto text-center relative z-10 pt-10">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-6 drop-shadow-lg">
-            Selamat Datang di <span className="text-emerald-300">Desa Pintar</span>
+            Selamat Datang di <span className="text-emerald-400">SmartDes</span>
           </h1>
-          <p className="mt-4 text-xl md:text-2xl max-w-3xl mx-auto text-emerald-50 mb-10 leading-relaxed">
+          <p className="mt-4 text-xl md:text-2xl max-w-3xl mx-auto text-emerald-50 mb-10 leading-relaxed drop-shadow-md">
             Mewujudkan tata kelola desa yang transparan, inovatif, dan terintegrasi melalui teknologi digital untuk kesejahteraan masyarakat.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            {/* Tombol Primary */}
             <Link 
               href="/pelayanan" 
               className="bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
               Layanan Publik Terpadu
             </Link>
-            {/* Tombol Secondary (Glassmorphism / Transparan) */}
             <Link 
               href="/profil" 
               className="bg-white/10 hover:bg-white/20 text-white font-semibold py-3 px-8 rounded-full border border-emerald-300/30 backdrop-blur-sm transition-all duration-300"
@@ -41,15 +43,13 @@ export default function Home() {
       </section>
 
       {/* ================= SECTION 2: FITUR & LAYANAN (CARDS) ================= */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-emerald-800">Layanan & Informasi Utama</h2>
           <div className="w-24 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        {/* Grid CSS untuk membuat 3 kolom di layar besar, dan 1 kolom di HP */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
           {/* Card 1: Pelayanan */}
           <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-slate-100">
             <div className="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
@@ -97,11 +97,69 @@ export default function Home() {
               Baca Berita <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ================= SECTION 3: GALERI FOTO (BENTO GRID MODERN) ================= */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <h2 className="text-3xl font-bold text-emerald-800">Potret Keindahan Desa</h2>
+            <div className="w-16 h-1 bg-emerald-500 mt-4 rounded-full"></div>
+            <p className="mt-4 text-slate-600 max-w-2xl">Jelajahi sudut-sudut inspiratif, kegiatan warga, dan pesona alam yang menjadi kebanggaan kita bersama.</p>
+          </div>
+          <Link href="/potensi" className="text-emerald-600 font-medium hover:text-emerald-800 flex items-center gap-1 shrink-0">
+            Lihat Semua Foto <span aria-hidden="true">&rarr;</span>
+          </Link>
+        </div>
+
+        {/* Bento Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 h-auto md:h-[600px]">
+          
+          {/* Foto 1 (Besar, menempati 2 kolom & 2 baris) */}
+          <div className="group relative overflow-hidden rounded-2xl md:col-span-2 md:row-span-2 shadow-md hover:shadow-xl transition-all duration-300 h-64 md:h-full">
+            <Image src="/images/galeri1.jpg" alt="Pemandangan Desa" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            {/* Overlay & Teks Hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-emerald-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+              <span className="bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">Alam</span>
+              <h3 className="text-2xl font-bold text-white mb-2">Area Persawahan Terasering</h3>
+              <p className="text-emerald-50 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">Hamparan hijau yang menjadi sumber utama komoditas agrikultur desa.</p>
+            </div>
+          </div>
+
+          {/* Foto 2 (Landscape atas) */}
+          <div className="group relative overflow-hidden rounded-2xl md:col-span-2 shadow-md hover:shadow-xl transition-all duration-300 h-48 md:h-full">
+            <Image src="/images/galeri2.jpg" alt="Kegiatan Warga" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute bottom-0 left-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="text-xl font-bold text-white">Festival Panen Raya</h3>
+              <p className="text-emerald-50 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Tradisi tahunan wujud syukur masyarakat.</p>
+            </div>
+          </div>
+
+          {/* Foto 3 (Kotak bawah kiri) */}
+          <div className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-48 md:h-full">
+            <Image src="/images/galeri3.jpg" alt="UMKM" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute bottom-0 left-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="text-lg font-bold text-white">Pusat Kerajinan</h3>
+            </div>
+          </div>
+
+          {/* Foto 4 (Kotak bawah kanan) */}
+          <div className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-48 md:h-full">
+            <Image src="/images/galeri4.jpg" alt="Infrastruktur" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute bottom-0 left-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+              <h3 className="text-lg font-bold text-white">Balai Desa Modern</h3>
+            </div>
+          </div>
 
         </div>
       </section>
 
-      {/* ================= SECTION 3: STATISTIK SINGKAT ================= */}
+      {/* ================= SECTION 4: STATISTIK SINGKAT ================= */}
       <section className="bg-emerald-50 py-16 px-4 sm:px-6 lg:px-8 border-t border-emerald-100">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
