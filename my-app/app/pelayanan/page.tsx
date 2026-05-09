@@ -55,15 +55,33 @@ export default function PelayananPage() {
 
         {open && (
           <div className="grid md:grid-cols-3 gap-4 mt-4">
+            <Card
+              title="📄 Surat Domisili"
+              desc="Surat keterangan tempat tinggal untuk keperluan administrasi seperti sekolah dan pekerjaan."
+              link="/pelayanan/domisili"
+            />
+
+            <Card
+              title="💸 SKTM"
+              desc="Surat untuk pengajuan bantuan sosial atau beasiswa sebagai bukti kondisi ekonomi."
+              link="/pelayanan/sktm"
+            />
+
+            <Card
+              title="🪪 KTP / KK"
+              desc="Surat pengantar untuk pembuatan atau pembaruan KTP dan Kartu Keluarga."
+              link="/pelayanan/ktp-kk"
+            />
           </div>
         )}
       </div>
 
-
       {/* ================= PENGADUAN ================= */}
 
       <div className="bg-green-600 p-6 rounded-xl shadow">
-        <h2 className="font-semibold text-white font-semibold mb-8">Form Pengaduan Masyarakat</h2>
+        <h2 className="font-semibold text-white font-semibold mb-8">
+          Form Pengaduan Masyarakat
+        </h2>
 
         <form onSubmit={handleSubmit}>
           {/* 2 kolom */}
@@ -86,7 +104,6 @@ export default function PelayananPage() {
               <option value="lampu">Lampu Jalan</option>
               <option value="lainnya">Lainnya</option>
             </select>
-
           </div>
 
           {/* lainnya */}
@@ -145,5 +162,21 @@ export default function PelayananPage() {
   );
 }
 
+// ================= CARD =================
+function Card({ title, desc, link }: any) {
+  return (
+    <Link href={link}>
+      <div
+        className="bg-green-600 text-white p-4 rounded-xl 
+                      hover:bg-green-700 transition cursor-pointer 
+                      h-40 shadow flex flex-col justify-between"
+      >
+        {/* Judul */}
+        <h3 className="font-semibold text-lg">{title}</h3>
 
-
+        {/* Deskripsi putih */}
+        <div className="bg-white text-gray-700 text-sm p-2 rounded">{desc}</div>
+      </div>
+    </Link>
+  );
+}
