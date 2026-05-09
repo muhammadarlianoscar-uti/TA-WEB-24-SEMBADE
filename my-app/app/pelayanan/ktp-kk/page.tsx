@@ -1,4 +1,5 @@
 "use client"
+import BackButton from "@/app/components/backbutton"
 import { useState } from "react"
 
 export default function KTPPage() {
@@ -15,6 +16,7 @@ export default function KTPPage() {
   }
 
   return (
+    
     <div className="p-6 max-w-xl mx-auto">
 
       <div className="bg-white p-6 rounded-2xl shadow">
@@ -56,6 +58,8 @@ export default function KTPPage() {
         <button className="w-full bg-green-600 text-white p-3 rounded-xl">
           Kirim
         </button>
+        
+         <BackButton />
 
       </div>
     </div>

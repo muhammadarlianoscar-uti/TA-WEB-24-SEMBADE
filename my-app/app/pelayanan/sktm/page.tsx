@@ -1,4 +1,5 @@
 "use client"
+import BackButton from "@/app/components/backbutton"
 import { useState } from "react"
 
 export default function SKTMPage() {
@@ -92,6 +93,8 @@ export default function SKTMPage() {
         <button className="w-full bg-green-600 text-white p-3 rounded-xl">
           Kirim
         </button>
+
+         <BackButton />
 
       </div>
     </div>

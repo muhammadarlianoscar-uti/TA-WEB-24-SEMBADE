@@ -72,6 +72,7 @@ export default function PelayananPage() {
               desc="Surat pengantar untuk pembuatan atau pembaruan KTP dan Kartu Keluarga."
               link="/pelayanan/ktp-kk"
             />
+            
           </div>
         )}
       </div>

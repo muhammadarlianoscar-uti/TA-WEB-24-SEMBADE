@@ -1,4 +1,5 @@
 "use client"
+import BackButton from "@/app/components/backbutton"
 import { useState } from "react"
 
 export default function DomisiliPage() {
@@ -81,6 +82,8 @@ export default function DomisiliPage() {
           className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
           Kirim
         </button>
+        
+    <BackButton />
 
       </div>
     </div>
