@@ -51,20 +51,25 @@ export default function PelayananPage() {
 
         <form onSubmit={handleSubmit}>
           {/* nama */}
-          <div className="grid md:grid-cols-2 gap-2">
+          <div className="grid md:grid-cols-2 gap-4">
             <input
               name="name"
               placeholder="Nama"
               onChange={handleChange}
               className="w-full border p-2 rounded-lg bg-white"
             />
-            {/* jenis pengaduan */}
-              <input
-              name="Jenis pengaduan"
-              placeholder="Jenis pengaduan"
+            <select
+              name="category"
               onChange={handleChange}
-              className="w-full border p-2 rounded-lg bg-white"
-            />
+              className="w-full border p-3 rounded-lg bg-white"
+              required
+            >
+              <option value="">Jenis Pengaduan</option>
+              <option value="jalan">Jalan Rusak</option>
+              <option value="sampah">Sampah</option>
+              <option value="lampu">Lampu Jalan</option>
+              <option value="lainnya">Lainnya</option>
+            </select>
 
           </div>
 
