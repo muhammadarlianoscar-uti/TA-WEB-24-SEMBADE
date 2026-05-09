@@ -1,0 +1,88 @@
+"use client"
+import { useState } from "react"
+
+export default function DomisiliPage() {
+  const [data, setData] = useState({
+    name: "",
+    nik: "",
+    address: "",
+    purpose: ""
+  })
+
+  const [files, setFiles] = useState({
+    ktp: null as File | null,
+    kk: null as File | null
+  })
+
+  const handleChange = (e: any) => {
+    setData({ ...data, [e.target.name]: e.target.value })
+  }
+
+  const handleFile = (e: any) => {
+    const { name, files } = e.target
+    setFiles((prev) => ({ ...prev, [name]: files[0] }))
+  }
+
+  const handleSend = () => {
+    console.log("DOMISILI:", data, files)
+  }
+
+  return (
+    <div className="p-6 max-w-xl mx-auto">
+
+      <div className="bg-white p-6 rounded-2xl shadow">
+
+        <h1 className="text-xl font-bold mb-4">📄 Surat Domisili</h1>
+
+        {/* SYARAT */}
+        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">
+          Fotokopi KTP & KK
+        </div>
+
+        {/* DATA */}
+        <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+          <p className="font-semibold mb-2">Data Diri</p>
+
+          <input name="name" placeholder="Nama" onChange={handleChange}
+            className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none" />
+
+          <input name="nik" placeholder="NIK" onChange={handleChange}
+            className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none" />
+
+          <input name="address" placeholder="Alamat" onChange={handleChange}
+            className="w-full border p-2 rounded focus:ring-2 focus:ring-green-400 outline-none" />
+        </div>
+
+        {/* KEPERLUAN */}
+        <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+          <p className="font-semibold mb-2">Keperluan</p>
+
+          <textarea name="purpose" onChange={handleChange}
+            className="w-full border p-2 rounded h-24 focus:ring-2 focus:ring-green-400 outline-none"
+            placeholder="Contoh: untuk melamar kerja" />
+        </div>
+
+        {/* UPLOAD */}
+        <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+          <p className="font-semibold mb-2">Upload Dokumen</p>
+
+          <div className="bg-blue-100 border border-blue-300 p-1 rounded mb-3 text-center">
+            <p className="text-sm">Upload KTP</p>
+            <input type="file" name="ktp" onChange={handleFile} />
+          </div>
+
+          <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center">
+            <p className="text-sm">Upload KK</p>
+            <input type="file" name="kk" onChange={handleFile} />
+          </div>
+        </div>
+
+        <button onClick={handleSend}
+          className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
+          Kirim
+        </button>
+
+      </div>
+    </div>
+  )
+}
