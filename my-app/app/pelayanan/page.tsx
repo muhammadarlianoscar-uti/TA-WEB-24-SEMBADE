@@ -43,6 +43,22 @@ export default function PelayananPage() {
     <div className="p-6 max-w-5xl mx-auto">
       <h1 className="text-2xl font-bold mb-6 text-center">Pelayanan Desa</h1>
 
+      {/* ================= ADMINISTRASI ================= */}
+      <div className="mb-10">
+        <button
+          onClick={() => setOpen(!open)}
+          className="w-full flex justify-between items-center bg-green-600 text-white p-4 rounded-xl"
+        >
+          <span className="font-semibold">🏛️ Administrasi Desa</span>
+          <span>{open ? "▲" : "▼"}</span>
+        </button>
+
+        {open && (
+          <div className="grid md:grid-cols-3 gap-4 mt-4">
+          </div>
+        )}
+      </div>
+
 
       {/* ================= PENGADUAN ================= */}
 
