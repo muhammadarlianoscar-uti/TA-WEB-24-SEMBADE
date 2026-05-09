@@ -46,11 +46,11 @@ export default function PelayananPage() {
 
       {/* ================= PENGADUAN ================= */}
 
-      <div>
-        <h2>Form Pengaduan Masyarakat</h2>
+      <div className="bg-green-600 p-6 rounded-xl shadow">
+        <h2 className="font-semibold text-white font-semibold mb-8">Form Pengaduan Masyarakat</h2>
 
         <form onSubmit={handleSubmit}>
-          {/* nama */}
+          {/* 2 kolom */}
           <div className="grid md:grid-cols-2 gap-4">
             <input
               name="name"
@@ -104,11 +104,11 @@ export default function PelayananPage() {
 
           {/* upload */}
           <div className="mt-4">
-            <label>
+            <label className="block mb-3 text-sm font-medium text-white">
               Upload Foto
             </label>
 
-            <div>
+            <div className="bg-blue-100 border border-blue-300 p-1 rounded-lg text-center hover:bg-blue-200 transition">
               <input
                 type="file"
                 name="image"
@@ -117,10 +117,10 @@ export default function PelayananPage() {
               />
             </div>
 
-            <p className="text-xs mt-1">Maksimal 5MB (jpg/png)</p>
+            <p className="text-xs text-white mt-1">Maksimal 5MB (jpg/png)</p>
           </div>
 
-          <button>
+          <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-blue-400">
             Kirim Pengaduan
           </button>
         </form>
