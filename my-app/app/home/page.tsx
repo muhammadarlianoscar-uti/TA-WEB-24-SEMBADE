@@ -7,8 +7,6 @@ export default function Home() {
       
       {/* ================= SECTION 1: HERO BANNER (PARALLAX + OVERLAY) ================= */}
       <section className="relative py-32 px-4 sm:px-6 lg:px-8 flex items-center justify-center min-h-[80vh]">
-        {/* Latar Belakang Parallax */}
-        {/* Pastikan kamu memiliki foto hero-bg.jpg di folder public/images/ */}
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
           style={{ backgroundImage: "url('/images/bghome.webp')" }}
@@ -28,7 +26,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link 
               href="/pelayanan" 
-              className="bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-emerald-500 hover:bg-emerald-400 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
               Layanan Publik Terpadu
             </Link>
@@ -51,7 +49,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Card 1: Pelayanan */}
-          <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-slate-100">
+          <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100">
             <div className="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
               <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -67,7 +65,7 @@ export default function Home() {
           </div>
 
           {/* Card 2: Potensi */}
-          <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-slate-100">
+          <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100">
             <div className="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
               <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
@@ -83,7 +81,7 @@ export default function Home() {
           </div>
 
           {/* Card 3: Berita */}
-          <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 transform hover:-translate-y-2 border border-slate-100">
+          <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100">
             <div className="w-14 h-14 bg-emerald-100 rounded-lg flex items-center justify-center mb-6">
               <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
@@ -118,7 +116,7 @@ export default function Home() {
           
           {/* Foto 1 (Besar, menempati 2 kolom & 2 baris) */}
           <div className="group relative overflow-hidden rounded-2xl md:col-span-2 md:row-span-2 shadow-md hover:shadow-xl transition-all duration-300 h-64 md:h-full">
-            <Image src="/images/galeri1.jpg" alt="Pemandangan Desa" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <Image src="/images/sawah.webp" alt="Pemandangan Desa" fill className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             {/* Overlay & Teks Hover */}
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-emerald-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-0 left-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
@@ -130,7 +128,7 @@ export default function Home() {
 
           {/* Foto 2 (Landscape atas) */}
           <div className="group relative overflow-hidden rounded-2xl md:col-span-2 shadow-md hover:shadow-xl transition-all duration-300 h-48 md:h-full">
-            <Image src="/images/galeri2.jpg" alt="Kegiatan Warga" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <Image src="/images/panenraya.webp" alt="Kegiatan Warga" fill className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-0 left-0 p-5 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <h3 className="text-xl font-bold text-white">Festival Panen Raya</h3>
@@ -140,7 +138,7 @@ export default function Home() {
 
           {/* Foto 3 (Kotak bawah kiri) */}
           <div className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-48 md:h-full">
-            <Image src="/images/galeri3.jpg" alt="UMKM" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <Image src="/images/kerajinan.webp" alt="UMKM" fill className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-0 left-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <h3 className="text-lg font-bold text-white">Pusat Kerajinan</h3>
@@ -149,7 +147,7 @@ export default function Home() {
 
           {/* Foto 4 (Kotak bawah kanan) */}
           <div className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 h-48 md:h-full">
-            <Image src="/images/galeri4.jpg" alt="Infrastruktur" fill className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-in-out" />
+            <Image src="/images/balai.webp" alt="Infrastruktur" fill className="object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-transparent to-transparent opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="absolute bottom-0 left-0 p-4 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               <h3 className="text-lg font-bold text-white">Balai Desa Modern</h3>
