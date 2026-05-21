@@ -141,6 +141,16 @@ export default function Profil() {
           ))}
         </div>
       </section>
+
+      {/* ================= SECTION 6: STRUKTUR ORGANISASI ================= */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16 relative z-10">
+          <p className="text-emerald-600 font-bold tracking-widest uppercase text-sm mb-3 drop-shadow-sm">Dedikasi Untuk Masyarakat</p>
+          <h2 className="text-4xl font-bold text-slate-900">Perangkat Desa</h2>
+        </div>
+
+        
+      </section>
       
     </div>
   );
