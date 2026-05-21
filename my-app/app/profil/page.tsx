@@ -192,7 +192,13 @@ export default function Profil() {
               Pintu balai desa kami selalu terbuka untuk masyarakat. Jangan ragu untuk datang jika Anda membutuhkan bantuan pelayanan administrasi atau sekadar berdiskusi.
             </p>
             
-           
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+              <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
+                <p className="font-semibold text-emerald-300 mb-1">📍 Alamat</p>
+                <p>Jl. Raya SmartDes No. 1, Kecamatan Maju, Kab. Sejahtera</p>
+              </div>
+             
+            </div>
           </div>
         </div>
       </section>
