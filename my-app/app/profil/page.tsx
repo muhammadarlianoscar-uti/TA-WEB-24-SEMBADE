@@ -119,6 +119,16 @@ export default function Profil() {
           </div>
         </div>
       </section>
+
+      {/* ================= SECTION 5: PENGHARGAAN (BARU) ================= */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-12 relative z-10">
+          <h2 className="text-3xl font-bold text-slate-900">Prestasi Desa</h2>
+          <div className="w-16 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
+        </div>
+        
+        
+      </section>
       
     </div>
   );
