@@ -127,7 +127,19 @@ export default function Profil() {
           <div className="w-16 h-1 bg-emerald-500 mx-auto mt-4 rounded-full"></div>
         </div>
         
-        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
+          {[
+            { gelar: "Desa Digital Terbaik", tahun: "2024", desc: "Tingkat Provinsi" },
+            { gelar: "Desa Mandiri Pangan", tahun: "2023", desc: "Penghargaan Nasional" },
+            { gelar: "Inovasi Layanan Publik", tahun: "2023", desc: "Kementerian Desa" },
+          ].map((item, index) => (
+            <div key={index} className="p-6 rounded-2xl bg-white/40 backdrop-blur-md border border-white/60 shadow-sm hover:shadow-md transition-all text-center">
+              <div className="w-12 h-12 mx-auto bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mb-4 text-xl">🏆</div>
+              <h4 className="font-bold text-slate-800 text-lg">{item.gelar}</h4>
+              <p className="text-slate-500 text-sm font-medium mt-1">{item.desc} &bull; {item.tahun}</p>
+            </div>
+          ))}
+        </div>
       </section>
       
     </div>
