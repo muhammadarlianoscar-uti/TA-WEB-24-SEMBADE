@@ -108,6 +108,10 @@ export default function Profil() {
               <h4 className="text-4xl font-extrabold text-emerald-600 mb-2">440</h4>
               <p className="text-slate-600 font-medium">Kepala Keluarga</p>
             </div>
+            <div>
+              <h4 className="text-4xl font-extrabold text-emerald-600 mb-2">45</h4>
+              <p className="text-slate-600 font-medium">Rukun Tetangga</p>
+            </div>
             
           </div>
         </div>
