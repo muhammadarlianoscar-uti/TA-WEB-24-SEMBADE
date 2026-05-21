@@ -201,7 +201,10 @@ export default function Profil() {
                 <p className="font-semibold text-emerald-300 mb-1">⏰ Jam Operasional</p>
                 <p>Senin - Jumat<br/>08.00 - 15.00 WIB</p>
               </div>
-              
+              <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
+                <p className="font-semibold text-emerald-300 mb-1">📞 Kontak</p>
+                <p>WA: 0812-3456-7890<br/>halo@smartdes.id</p>
+              </div>
             </div>
           </div>
         </div>
