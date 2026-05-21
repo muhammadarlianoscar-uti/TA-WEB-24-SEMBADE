@@ -197,7 +197,11 @@ export default function Profil() {
                 <p className="font-semibold text-emerald-300 mb-1">📍 Alamat</p>
                 <p>Jl. Raya SmartDes No. 1, Kecamatan Maju, Kab. Sejahtera</p>
               </div>
-             
+              <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
+                <p className="font-semibold text-emerald-300 mb-1">⏰ Jam Operasional</p>
+                <p>Senin - Jumat<br/>08.00 - 15.00 WIB</p>
+              </div>
+              
             </div>
           </div>
         </div>
