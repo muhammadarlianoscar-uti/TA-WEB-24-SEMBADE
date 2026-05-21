@@ -186,7 +186,14 @@ export default function Profil() {
         <div className="p-8 md:p-12 rounded-3xl bg-emerald-800 backdrop-blur-xl shadow-2xl relative overflow-hidden text-center text-white">
           <div className="absolute inset-0 z-0 bg-[url('/images/balai.webp')] bg-cover opacity-10"></div>
           
-         
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold mb-6">Kunjungi Balai Desa Kami</h2>
+            <p className="text-emerald-100 mb-8 max-w-xl mx-auto">
+              Pintu balai desa kami selalu terbuka untuk masyarakat. Jangan ragu untuk datang jika Anda membutuhkan bantuan pelayanan administrasi atau sekadar berdiskusi.
+            </p>
+            
+           
+          </div>
         </div>
       </section>
       
