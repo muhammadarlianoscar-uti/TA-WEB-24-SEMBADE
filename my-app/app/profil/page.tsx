@@ -27,6 +27,37 @@ export default function Profil() {
           </p>
         </div>
       </section>
+
+      {/* ================= SECTION 2: SEJARAH ================= */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-20 items-center">
+          <div className="md:col-span-5 relative h-[500px] lg:h-[600px] rounded-t-[10rem] rounded-b-3xl overflow-hidden shadow-2xl shadow-emerald-900/20">
+            <Image 
+              src="/images/sawah.webp" 
+              alt="Sejarah Desa" 
+              fill 
+              className="object-cover hover:scale-105 transition-transform duration-1000"
+            />
+          </div>
+
+          <div className="md:col-span-7 flex flex-col justify-center space-y-8 p-10 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+            <div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-4 tracking-tight">Menjaga Tradisi,<br/>Merangkul <span className="text-emerald-600">Inovasi.</span></h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-emerald-500 to-transparent rounded-full"></div>
+            </div>
+            
+            <div className="space-y-6 text-slate-700 font-medium leading-loose text-lg">
+              <p>
+                Desa SmartDes didirikan pada tahun 1920 oleh para leluhur yang bermata pencaharian sebagai petani tulen. Nama desa ini diambil dari filosofi masyarakat yang selalu mengedepankan kearifan lokal, kerukunan, dan semangat gotong royong yang mengakar kuat.
+              </p>
+              <p>
+                Seiring berjalannya waktu dan pesatnya arus teknologi, kami tidak tinggal diam. Pada tahun 2023, desa kami resmi bertransformasi menjadi desa digital yang cerdas—menyederhanakan birokrasi dan membuka gerbang ekonomi baru tanpa pernah meninggalkan identitas budaya asli kami.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </div>
   );
 }
