@@ -161,7 +161,24 @@ export default function Profil() {
           </div>
         </div>
 
-      
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 relative z-10">
+          {[
+            { nama: 'Siti Aminah', jabatan: 'Sekretaris Desa' },
+            { nama: 'Ahmad Faisal', jabatan: 'Kaur Keuangan' },
+            { nama: 'Dewi Lestari', jabatan: 'Kaur Perencanaan' },
+            { nama: 'Rahmat Hidayat', jabatan: 'Kasi Pemerintahan' },
+          ].map((item, index) => (
+            <div key={index} className="group text-center">
+              <div className="w-32 h-32 mx-auto mb-5 rounded-full p-1.5 bg-white/30 backdrop-blur-md shadow-lg shadow-slate-200/20 border border-white/60 relative overflow-hidden transition-transform duration-500 group-hover:-translate-y-2 group-hover:bg-white/60">
+                <div className="w-full h-full rounded-full bg-emerald-50/50 flex items-center justify-center text-emerald-600 font-light text-3xl transition-colors duration-500">
+                  {item.nama.charAt(0)}
+                </div>
+              </div>
+              <h4 className="font-bold text-slate-800 text-lg mb-1">{item.nama}</h4>
+              <p className="text-slate-600 text-sm font-medium">{item.jabatan}</p>
+            </div>
+          ))}
+        </div>
       </section>
       
     </div>
