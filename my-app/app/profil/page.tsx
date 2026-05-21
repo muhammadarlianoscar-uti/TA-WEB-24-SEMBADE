@@ -149,7 +149,19 @@ export default function Profil() {
           <h2 className="text-4xl font-bold text-slate-900">Perangkat Desa</h2>
         </div>
 
-        
+        <div className="flex justify-center mb-16 relative z-10">
+          <div className="group text-center">
+            <div className="w-44 h-44 mx-auto mb-6 rounded-full p-2 bg-white/30 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-white/50 relative overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-white/50">
+              <div className="w-full h-full rounded-full overflow-hidden relative">
+                <Image src="/images/kades.webp" alt="Kepala Desa" fill className="object-cover transition-all duration-700" />
+              </div>
+            </div>
+            <h4 className="text-2xl font-bold text-slate-900 mb-1">Budi Santoso</h4>
+            <p className="text-emerald-600 font-semibold tracking-wide bg-white/40 backdrop-blur-sm border border-white/50 inline-block px-4 py-1 rounded-full mt-2 shadow-sm">Kepala Desa</p>
+          </div>
+        </div>
+
+      
       </section>
       
     </div>
