@@ -57,6 +57,44 @@ export default function Profil() {
           </div>
         </div>
       </section>
+
+      {/* ================= SECTION 3: VISI & MISI ================= */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="group p-10 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:bg-white/60 hover:shadow-[0_8px_30px_rgb(16,185,129,0.1)] transition-all duration-500">
+              <div className="w-14 h-14 bg-white/80 backdrop-blur-sm shadow-sm rounded-2xl flex items-center justify-center mb-8 border border-white group-hover:scale-110 transition-transform duration-500">
+                <span className="text-2xl">👁️</span>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 mb-6">Visi Utama</h3>
+             <p className="text-xl text-slate-700 font-serif italic leading-relaxed">
+                &quot;Terwujudnya desa mandiri, inovatif, dan sejahtera yang berlandaskan pemanfaatan teknologi tepat guna serta nilai-nilai keimanan yang kokoh.&quot;
+              </p>
+            </div>
+
+            <div className="group p-10 rounded-3xl bg-white/40 backdrop-blur-xl border border-white/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:bg-white/60 hover:shadow-[0_8px_30px_rgb(16,185,129,0.1)] transition-all duration-500">
+              <div className="w-14 h-14 bg-white/80 backdrop-blur-sm shadow-sm rounded-2xl flex items-center justify-center mb-8 border border-white group-hover:scale-110 transition-transform duration-500">
+                <span className="text-2xl">🎯</span>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 mb-6">Misi Kami</h3>
+              <ul className="space-y-4 text-slate-700 font-medium text-lg">
+                <li className="flex items-start gap-4">
+                  <span className="text-emerald-500 mt-1">✦</span>
+                  Meningkatkan pelayanan publik berbasis digital yang cepat dan transparan.
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="text-emerald-500 mt-1">✦</span>
+                  Memberdayakan UMKM dan potensi ekonomi kreatif warga desa.
+                </li>
+                <li className="flex items-start gap-4">
+                  <span className="text-emerald-500 mt-1">✦</span>
+                  Menjaga kelestarian lingkungan dan melestarikan budaya lokal warisan leluhur.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
       
     </div>
   );
