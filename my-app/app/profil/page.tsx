@@ -180,6 +180,15 @@ export default function Profil() {
           ))}
         </div>
       </section>
+
+      {/* ================= SECTION 7: KONTAK & LOKASI (BARU) ================= */}
+      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <div className="p-8 md:p-12 rounded-3xl bg-emerald-800 backdrop-blur-xl shadow-2xl relative overflow-hidden text-center text-white">
+          <div className="absolute inset-0 z-0 bg-[url('/images/balai.webp')] bg-cover opacity-10"></div>
+          
+         
+        </div>
+      </section>
       
     </div>
   );
