@@ -95,6 +95,19 @@ export default function Profil() {
           </div>
         </div>
       </section>
+
+      {/* ================= SECTION 4: DEMOGRAFI & STATISTIK (BARU) ================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="p-10 rounded-3xl bg-emerald-900/5 backdrop-blur-lg border border-white/40 shadow-inner relative overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+            <div>
+              <h4 className="text-4xl font-extrabold text-emerald-600 mb-2">1.565</h4>
+              <p className="text-slate-600 font-medium">Jiwa Penduduk</p>
+            </div>
+           
+          </div>
+        </div>
+      </section>
       
     </div>
   );
