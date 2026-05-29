@@ -292,10 +292,21 @@ export default function PotensiPage() {
             </div>
           </div>
         </div>
+
+        <section className="py-20 bg-slate-50">
+           <div className="container mx-auto px-4"> 
+            <div className="bg-white rounded-3xl p-12 text-center shadow-sm"> 
+              <h2 className="text-4xl font-bold text-slate-800 mb-6"> 
+                Tertarik Mengembangkan Potensi Desa? </h2> 
+                <p className="text-slate-600 mb-8"> 
+                  Pemerintah desa terbuka untuk kolaborasi. </p> 
+                  <button className="bg-emerald-600 text-white px-8 py-3 rounded-xl"> 
+                    Hubungi Pengelola 
+                  </button> 
+              </div> 
+            </div> 
+          </section>
       </section>
     </div>
-
-
   );
-
 }
