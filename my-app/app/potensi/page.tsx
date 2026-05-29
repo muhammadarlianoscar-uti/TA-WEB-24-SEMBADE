@@ -205,9 +205,34 @@ export default function PotensiPage() {
             <h5 className="text-xl font-bold text-slate-700">TechGov Partner</h5>
           </div>
         </div>
-      </section>
+  </section>
+
+  <section className="py-16 bg-slate-800 text-white">
+
+  <div className="container mx-auto px-4 md:px-6">
+
+    <h2 className="text-4xl font-bold mb-10">
+
+      Tren Pertumbuhan Ekonomi Desa
+
+    </h2>
+
+    <div className="flex items-end gap-6 h-56">
+
+      <div className="w-1/3 bg-emerald-400 h-[40%] rounded-t-md"></div>
+
+      <div className="w-1/3 bg-emerald-500 h-[70%] rounded-t-md"></div>
+
+      <div className="w-1/3 bg-emerald-600 h-[100%] rounded-t-md"></div>
 
     </div>
+
+  </div>
+
+</section>
+
+    </div>
+
 
   );
 
