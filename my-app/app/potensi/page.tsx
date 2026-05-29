@@ -195,6 +195,18 @@ export default function PotensiPage() {
 
 </section>
 
+<section className="py-8 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Didukung & Bermitra Dengan</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+            <h5 className="text-xl font-bold text-slate-700">KEMENDESA</h5>
+            <h5 className="text-xl font-bold text-slate-700">Bank Daerah</h5>
+            <h5 className="text-xl font-bold text-slate-700">BUMDes Maju</h5>
+            <h5 className="text-xl font-bold text-slate-700">TechGov Partner</h5>
+          </div>
+        </div>
+      </section>
+
     </div>
 
   );
