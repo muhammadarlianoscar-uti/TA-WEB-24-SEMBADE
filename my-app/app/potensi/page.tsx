@@ -6,6 +6,26 @@ import React, { useState } from 'react';
 
 export default function PotensiPage() {
 const [activeFilter, setActiveFilter] = useState('Semua');
+const potensiData = [ 
+  { 
+    id: 1, title: "Pertanian Organik",
+    category: "Pertanian",
+    description: "Pemanfaatan lahan subur untuk komoditas organik." 
+  }, 
+  
+  { id: 2,
+    title: "Pariwisata Alam",
+    category: "Pariwisata", 
+    description: "Destinasi wisata pegunungan dan air terjun." 
+  }, 
+  
+  { id: 3,
+    title: "Sentra UMKM",
+    category: "UMKM",
+    description: "Pusat kerajinan tangan dan kuliner desa." 
+    } 
+  ];
+  
   return (
     <div className="min-h-screen bg-slate-50">
       <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden shadow-sm">
