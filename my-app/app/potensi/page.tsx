@@ -1,8 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+
+
 
 export default function PotensiPage() {
+const [activeFilter, setActiveFilter] = useState('Semua');
   return (
     <div className="min-h-screen bg-slate-50">
       <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden shadow-sm">
