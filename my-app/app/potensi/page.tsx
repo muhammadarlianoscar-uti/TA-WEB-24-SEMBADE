@@ -292,20 +292,32 @@ export default function PotensiPage() {
             </div>
           </div>
         </div>
+      </section>
 
-        <section className="py-20 bg-slate-50">
-           <div className="container mx-auto px-4"> 
-            <div className="bg-white rounded-3xl p-12 text-center shadow-sm"> 
-              <h2 className="text-4xl font-bold text-slate-800 mb-6"> 
-                Tertarik Mengembangkan Potensi Desa? </h2> 
-                <p className="text-slate-600 mb-8"> 
-                  Pemerintah desa terbuka untuk kolaborasi. </p> 
-                  <button className="bg-emerald-600 text-white px-8 py-3 rounded-xl"> 
-                    Hubungi Pengelola 
-                  </button> 
-              </div> 
-            </div> 
-          </section>
+       <section className="pb-20 pt-16 bg-slate-50">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="bg-white rounded-3xl p-10 md:p-16 text-center max-w-5xl mx-auto shadow-sm border border-slate-200/60 relative overflow-hidden">
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-40 h-40 bg-emerald-50 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-40 h-40 bg-slate-100 rounded-full blur-3xl" />
+            
+            <div className="relative z-10 space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800">
+                Tertarik Mengembangkan Potensi Desa Bersama Kami?
+              </h2>
+              <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                Pemerintah desa terbuka untuk berbagai bentuk kolaborasi, investasi, dan inovasi teknologi demi memajukan ekonomi masyarakat lokal.
+              </p>
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+                <button className="w-full sm:w-auto px-8 py-3.5 bg-emerald-600 text-white rounded-xl font-semibold shadow-lg shadow-emerald-600/30 hover:bg-emerald-700 transition-all hover:-translate-y-1">
+                  Hubungi Pengelola
+                </button>
+                <button className="w-full sm:w-auto px-8 py-3.5 bg-white text-slate-700 border border-slate-300 rounded-xl font-semibold hover:bg-slate-50 transition-all hover:-translate-y-1">
+                  Unduh Proposal (PDF)
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
