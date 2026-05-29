@@ -26,6 +26,7 @@ const potensiData = [
     } 
   ];
 const categories = ['Semua', 'Pariwisata', 'Pertanian', 'UMKM'];
+const filteredData = activeFilter === 'Semua' ? potensiData : potensiData.filter( (item) => item.category === activeFilter );
 
 
   return (
@@ -43,6 +44,37 @@ const categories = ['Semua', 'Pariwisata', 'Pertanian', 'UMKM'];
           </div>
         </div>
       </section>
-    </div>
-  );
+      <section className="py-10">
+
+      <div className="flex flex-wrap justify-center gap-4 py-10">
+
+        {categories.map((category) => (
+
+          <button
+            key={category}
+            onClick={() => setActiveFilter(category)}
+            className={`px-6 py-2 rounded-full
+
+            ${
+              activeFilter === category
+
+                ? 'bg-emerald-600 text-white'
+
+                : 'bg-white border border-slate-300'
+            }`}
+          >
+
+            {category}
+
+          </button>
+
+        ))}
+
+      </div>
+
+    </section>
+
+  </div>
+
+);
 }
