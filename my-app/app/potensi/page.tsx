@@ -259,6 +259,24 @@ export default function PotensiPage() {
           </div>
         </div>
       </section>
+
+      <section className="py-16 bg-white">
+
+  <div className="container mx-auto px-4 md:px-6">
+
+    <div className="bg-slate-100 rounded-3xl h-96 flex items-center justify-center">
+
+      <p className="text-slate-500 text-xl font-semibold">
+
+        Integrasi Peta Digital
+
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
     </div>
 
 
