@@ -25,7 +25,9 @@ const potensiData = [
     description: "Pusat kerajinan tangan dan kuliner desa." 
     } 
   ];
-  
+const categories = ['Semua', 'Pariwisata', 'Pertanian', 'UMKM'];
+
+
   return (
     <div className="min-h-screen bg-slate-50">
       <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden shadow-sm">
