@@ -103,6 +103,9 @@ export default function DomisiliPage() {
                 Upload KTP
               </label>
               <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <span className="text-sm text-gray-500">
+                  {files.ktp ? files.ktp.name : "Pilih file KTP"}
+                </span>
                 <input
                   type="file"
                   name="ktp"
@@ -119,6 +122,9 @@ export default function DomisiliPage() {
                 Upload KK
               </label>
               <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <span className="text-sm text-gray-500">
+                  {files.kk ? files.kk.name : "Pilih file KK"}
+                </span>
                 <input
                   type="file"
                   name="kk"
@@ -131,7 +137,10 @@ export default function DomisiliPage() {
             </div>
           </div>
 
-          <button className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700 mb-4"
+          >
             Kirim
           </button>
         </form>
