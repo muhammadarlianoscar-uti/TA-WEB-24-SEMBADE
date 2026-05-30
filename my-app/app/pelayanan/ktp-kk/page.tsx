@@ -81,17 +81,38 @@ export default function KTPPage() {
 
           <div className="bg-gray-50 border p-4 rounded-xl mb-4">
             <p className="font-semibold mb-2">Pengajuan</p>
-
-            <select
-              name="type"
-              onChange={handleChange}
-              className="w-full border p-2 rounded mb-2"
-            >
-              <option value="">Pilih Jenis</option>
-              <option value="ktp">KTP</option>
-              <option value="kk">KK</option>
-            </select>
-
+            <div classname="relative w-full mb-2">
+              <select
+                name="type"
+                value={data.type}
+                onChange={handleChange}
+                required
+                className="w-full border p-2 rounded mb-2"
+              >
+                <option value="" disabled>
+                  Pilih Jenis
+                </option>
+                <option value="ktp">KTP</option>
+                <option value="kk">KK</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            
             <textarea
               name="purpose"
               value={data.purpose}
