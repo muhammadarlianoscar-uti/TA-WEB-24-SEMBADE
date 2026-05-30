@@ -138,6 +138,7 @@ export default function PelayananPage() {
               {/* deskripsi BESAR */}
               <textarea
                 name="description"
+                value={form.description}
                 placeholder="Deskripsikan pengaduan secara lengkap..."
                 onChange={handleChange}
                 className="w-full border p-4 rounded-lg mt-4 h-44 bg-white"
