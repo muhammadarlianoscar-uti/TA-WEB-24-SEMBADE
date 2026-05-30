@@ -44,7 +44,7 @@ export default function KTPPage() {
         <h1 className="text-xl font-bold mb-4">🪪 KTP / KK</h1>
 
         <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">
-          KK & Surat RT
+          KK & Surat pengantar RT
         </div>
 
         <form onSubmit={handleSend} autoComplete="off">
@@ -131,7 +131,7 @@ export default function KTPPage() {
               </label>
               <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
                 <span className="text-sm text-gray-500">
-                  {files.kk ? files.kk.name : "Pilih file KK"}
+                  {files.kk ? files.kk.name : "Pilih file"}
                 </span>
                 <input
                   type="file"
@@ -145,11 +145,11 @@ export default function KTPPage() {
             </div>
             <div>
               <label className="block text-sm text-gray-600 mb-1">
-                Upload Surat RT
+                Upload Surat Pengantar RT
               </label>
               <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
                 <span className="text-sm text-gray-500">
-                  {files.suratRt ? files.suratRt.name : "Pilih file Surat RT"}
+                  {files.suratRt ? files.suratRt.name : "Pilih file"}
                 </span>
                 <input
                   type="file"
@@ -163,7 +163,7 @@ export default function KTPPage() {
             </div>
           </div>
 
-          <button className="w-full bg-green-600 text-white p-3 rounded-xl">
+          <button type="submit" className="w-full bg-green-600 text-white p-3 rounded-xl">
             Kirim
           </button>
 
