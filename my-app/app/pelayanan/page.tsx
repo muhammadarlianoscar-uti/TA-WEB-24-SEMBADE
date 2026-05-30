@@ -38,9 +38,10 @@ export default function PelayananPage() {
 
     console.log("DATA:", data);
     alert("Pengaduan berhasil dikirim");
+
+    setForm(initialFormState);
+    e.target.reset();
   };
-  setForm(initialFormState);
-  e.target.reset();
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
