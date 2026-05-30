@@ -96,19 +96,23 @@ export default function PelayananPage() {
               onChange={handleChange}
               className="w-full border p-2 rounded-lg bg-white"
             />
-            <select
-              name="category"
-              value={form.category}
-              onChange={handleChange}
-              className="w-full border p-3 rounded-lg bg-white"
-              required
-            >
-              <option value="" disabled>Jenis Pengaduan</option>
-              <option value="jalan">Jalan Rusak</option>
-              <option value="sampah">Sampah</option>
-              <option value="lampu">Lampu Jalan</option>
-              <option value="lainnya">Lainnya</option>
-            </select>
+            <div className="relative w-full">
+              <select
+                name="category"
+                value={form.category}
+                onChange={handleChange}
+                className="w-full border p-3 rounded-lg bg-white"
+                required
+              >
+                <option value="" disabled>
+                  Jenis Pengaduan
+                </option>
+                <option value="jalan">Jalan Rusak</option>
+                <option value="sampah">Sampah</option>
+                <option value="lampu">Lampu Jalan</option>
+                <option value="lainnya">Lainnya</option>
+              </select>
+            </div>
           </div>
 
           {/* lainnya */}
