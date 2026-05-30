@@ -40,6 +40,7 @@ export default function PelayananPage() {
     alert("Pengaduan berhasil dikirim");
   };
   setForm(initialFormState);
+  e.target.reset();
 
   return (
     <div className="p-6 max-w-5xl mx-auto">
