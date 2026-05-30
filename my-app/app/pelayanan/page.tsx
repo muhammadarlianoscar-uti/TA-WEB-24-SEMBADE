@@ -172,6 +172,9 @@ export default function PelayananPage() {
                 </label>
 
                 <label className="flex items-center justify-center bg-white border border-gray-300 p-3 rounded-lg cursor-pointer hover:bg-gray-50 transition text-gray-600">
+                  <span className="text-sm">
+                    {form.image ? form.image.name : "Pilih foto pengaduan"}
+                  </span>
                   <input
                     type="file"
                     name="image"
