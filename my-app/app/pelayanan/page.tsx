@@ -5,14 +5,15 @@ import { useState } from "react";
 export default function PelayananPage() {
   const [open, setOpen] = useState(false);
 
-  const [form, setForm] = useState({
+  const initialFormState = {
     name: "",
     category: "",
     customCategory: "",
     address: "",
     description: "",
     image: null as File | null,
-  });
+  };
+  const [form, setForm] = useState(initialFormState);
 
   const handleChange = (e: any) => {
     const { name, value, files } = e.target;
@@ -72,7 +73,6 @@ export default function PelayananPage() {
               desc="Surat pengantar untuk pembuatan atau pembaruan KTP dan Kartu Keluarga."
               link="/pelayanan/ktp-kk"
             />
-            
           </div>
         )}
       </div>
@@ -117,49 +117,51 @@ export default function PelayananPage() {
               required
             />
           )}
-          
+
           {form.category && form.category !== "" && (
             <>
-          {/* alamat */}
-          <input
-            name="address"
-            placeholder="Alamat / Patokan Lokasi"
-            onChange={handleChange}
-            className="w-full border p-3 rounded-lg bg-white mt-4"
-            required
-          />
-
-          {/* deskripsi BESAR */}
-          <textarea
-            name="description"
-            placeholder="Deskripsikan pengaduan secara lengkap..."
-            onChange={handleChange}
-            className="w-full border p-4 rounded-lg mt-4 h-44 bg-white"
-            required
-          />
-
-          {/* upload */}
-          <div className="mt-4">
-            <label className="block mb-2 text-sm font-medium text-white">
-              Upload Foto
-            </label>
-
-            <div className="bg-blue-200 border border-blue-300 p-1 rounded-lg text-center hover:bg-blue-400 transition">
+              {/* alamat */}
               <input
-                type="file"
-                name="image"
+                name="address"
+                placeholder="Alamat / Patokan Lokasi"
                 onChange={handleChange}
-                className="w-full text-sm"
+                className="w-full border p-3 rounded-lg bg-white mt-4"
+                required
               />
-            </div>
 
-            <p className="text-xs text-white mt-1">Maksimal 5MB (jpg/png)</p>
-          </div>
+              {/* deskripsi BESAR */}
+              <textarea
+                name="description"
+                placeholder="Deskripsikan pengaduan secara lengkap..."
+                onChange={handleChange}
+                className="w-full border p-4 rounded-lg mt-4 h-44 bg-white"
+                required
+              />
 
-          <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-yellow-400">
-            Kirim Pengaduan
-          </button>
-          </>
+              {/* upload */}
+              <div className="mt-4">
+                <label className="block mb-2 text-sm font-medium text-white">
+                  Upload Foto
+                </label>
+
+                <div className="bg-blue-200 border border-blue-300 p-1 rounded-lg text-center hover:bg-blue-400 transition">
+                  <input
+                    type="file"
+                    name="image"
+                    onChange={handleChange}
+                    className="w-full text-sm"
+                  />
+                </div>
+
+                <p className="text-xs text-white mt-1">
+                  Maksimal 5MB (jpg/png)
+                </p>
+              </div>
+
+              <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-yellow-400">
+                Kirim Pengaduan
+              </button>
+            </>
           )}
         </form>
       </div>
