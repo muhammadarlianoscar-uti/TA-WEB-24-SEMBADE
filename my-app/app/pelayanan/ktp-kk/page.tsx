@@ -32,6 +32,10 @@ export default function KTPPage() {
     e.preventDefault();
     console.log("KTP/KK:", data, files);
     alert("Pengajuan KTP/KK berhasil dikirim");
+
+    setData(initialData);
+    setFiles(initialFiles);
+    e.target.reset();
   };
 
   return (
