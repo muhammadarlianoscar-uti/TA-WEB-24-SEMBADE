@@ -106,23 +106,41 @@ export default function SKTMPage() {
               className="w-full border p-2 rounded mb-2"
             />
 
-            {/* Dropdown Penghasilan */}
-            <select
-              name="income"
-              value={data.income}
-              onChange={handleChange}
-              className="w-full border p-2 rounded bg-white text-gray-700"
-              required
-            >
-              <option value="" disabled>
-                Pilih Penghasilan Per Bulan
-              </option>
-              <option value="< 1jt">Kurang dari Rp 1.000.000</option>
-              <option value="1jt - 2jt">Rp 1.000.000 - Rp 2.000.000</option>
-              <option value="2jt - 3jt">Rp 2.000.000 - Rp 3.000.000</option>
-              <option value="3jt - 5jt">Rp 3.000.000 - Rp 5.000.000</option>
-              <option value="> 5jt">Lebih dari Rp 5.000.000</option>
-            </select>
+            <div className="relative w-full">
+              {/* Dropdown Penghasilan */}
+              <select
+                name="income"
+                value={data.income}
+                onChange={handleChange}
+                className="w-full border p-2 rounded bg-white text-gray-700"
+                required
+              >
+                <option value="" disabled>
+                  Pilih Penghasilan Per Bulan
+                </option>
+                <option value="< 1jt">Kurang dari Rp 1.000.000</option>
+                <option value="1jt - 2jt">Rp 1.000.000 - Rp 2.000.000</option>
+                <option value="2jt - 3jt">Rp 2.000.000 - Rp 3.000.000</option>
+                <option value="3jt - 5jt">Rp 3.000.000 - Rp 5.000.000</option>
+                <option value="> 5jt">Lebih dari Rp 5.000.000</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-3 flex item-center text-gray-500">
+                <svg
+                  className="h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
+            </div>
           </div>
 
           <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center mb-4">
