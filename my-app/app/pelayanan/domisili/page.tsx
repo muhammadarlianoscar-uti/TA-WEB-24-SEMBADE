@@ -27,8 +27,10 @@ export default function DomisiliPage() {
     setFiles((prev) => ({ ...prev, [name]: files[0] }));
   };
 
-  const handleSend = () => {
+  const handleSend = (e: any) => {
+    e.preventDefault();
     console.log("DOMISILI:", data, files);
+    alert("Pengajuan Surat Domisili berhasil dikirim");
   };
 
   return (
