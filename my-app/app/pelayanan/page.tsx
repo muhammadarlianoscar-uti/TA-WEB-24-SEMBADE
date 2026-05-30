@@ -128,6 +128,7 @@ export default function PelayananPage() {
               {/* alamat */}
               <input
                 name="address"
+                value={form.address}
                 placeholder="Alamat / Patokan Lokasi"
                 onChange={handleChange}
                 className="w-full border p-3 rounded-lg bg-white mt-4"
