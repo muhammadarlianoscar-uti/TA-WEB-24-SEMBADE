@@ -104,6 +104,7 @@ export default function DomisiliPage() {
                 type="file"
                 name="ktp"
                 onChange={handleFile}
+                className="hidden"
                 accept="image/*,.pdf"
                 required
               />
@@ -115,6 +116,7 @@ export default function DomisiliPage() {
                 type="file"
                 name="kk"
                 onChange={handleFile}
+                className="hidden"
                 accept="image/*,.pdf"
                 required
               />
