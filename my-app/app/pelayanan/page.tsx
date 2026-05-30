@@ -171,14 +171,15 @@ export default function PelayananPage() {
                   Upload Foto
                 </label>
 
-                <div className="bg-blue-200 border border-blue-300 p-1 rounded-lg text-center hover:bg-blue-400 transition">
+                <label className="flex items-center justify-center bg-white border border-gray-300 p-3 rounded-lg cursor-pointer hover:bg-gray-50 transition text-gray-600">
                   <input
                     type="file"
                     name="image"
                     onChange={handleChange}
-                    className="w-full text-sm"
+                    className="hidden"
+                    accept="image/*"
                   />
-                </div>
+                </label>
 
                 <p className="text-xs text-white mt-1">
                   Maksimal 5MB (jpg/png)
