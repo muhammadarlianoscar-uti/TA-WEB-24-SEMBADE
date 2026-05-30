@@ -43,65 +43,64 @@ export default function DomisiliPage() {
           Fotokopi KTP & KK
         </div>
 
-        {/* DATA */}
-        <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-          <p className="font-semibold mb-2">Data Diri</p>
+        <form onSubmit={handleSend} autoComplete="off">
+          {/* DATA */}
+          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+            <p className="font-semibold mb-2">Data Diri</p>
 
-          <input
-            name="name"
-            placeholder="Nama"
-            onChange={handleChange}
-            className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
-          />
+            <input
+              name="name"
+              placeholder="Nama"
+              onChange={handleChange}
+              className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
+            />
 
-          <input
-            name="nik"
-            placeholder="NIK"
-            onChange={handleChange}
-            className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
-          />
+            <input
+              name="nik"
+              placeholder="NIK"
+              onChange={handleChange}
+              className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
+            />
 
-          <input
-            name="address"
-            placeholder="Alamat"
-            onChange={handleChange}
-            className="w-full border p-2 rounded focus:ring-2 focus:ring-green-400 outline-none"
-          />
-        </div>
-
-        {/* KEPERLUAN */}
-        <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-          <p className="font-semibold mb-2">Keperluan</p>
-
-          <textarea
-            name="purpose"
-            onChange={handleChange}
-            className="w-full border p-2 rounded h-24 focus:ring-2 focus:ring-green-400 outline-none"
-            placeholder="Contoh: untuk melamar kerja"
-          />
-        </div>
-
-        {/* UPLOAD */}
-        <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-          <p className="font-semibold mb-2">Upload Dokumen</p>
-
-          <div className="bg-blue-100 border border-blue-300 p-1 rounded mb-3 text-center">
-            <p className="text-sm">Upload KTP</p>
-            <input type="file" name="ktp" onChange={handleFile} />
+            <input
+              name="address"
+              placeholder="Alamat"
+              onChange={handleChange}
+              className="w-full border p-2 rounded focus:ring-2 focus:ring-green-400 outline-none"
+            />
           </div>
 
-          <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center">
-            <p className="text-sm">Upload KK</p>
-            <input type="file" name="kk" onChange={handleFile} />
-          </div>
-        </div>
+          {/* KEPERLUAN */}
+          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+            <p className="font-semibold mb-2">Keperluan</p>
 
-        <button
-          onClick={handleSend}
-          className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700"
-        >
-          Kirim
-        </button>
+            <textarea
+              name="purpose"
+              onChange={handleChange}
+              className="w-full border p-2 rounded h-24 focus:ring-2 focus:ring-green-400 outline-none"
+              placeholder="Contoh: untuk melamar kerja"
+            />
+          </div>
+
+          {/* UPLOAD */}
+          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+            <p className="font-semibold mb-2">Upload Dokumen</p>
+
+            <div className="bg-blue-100 border border-blue-300 p-1 rounded mb-3 text-center">
+              <p className="text-sm">Upload KTP</p>
+              <input type="file" name="ktp" onChange={handleFile} />
+            </div>
+
+            <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center">
+              <p className="text-sm">Upload KK</p>
+              <input type="file" name="kk" onChange={handleFile} />
+            </div>
+          </div>
+
+          <button className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700">
+            Kirim
+          </button>
+        </form>
 
         <BackButton />
       </div>
