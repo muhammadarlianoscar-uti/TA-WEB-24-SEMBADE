@@ -189,7 +189,10 @@ export default function PelayananPage() {
                 </p>
               </div>
 
-              <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-yellow-400">
+              <button
+                type="submit"
+                className="bg-blue-500 text-white p-2 px-6 rounded-lg mt-6 hover:bg-yellow-400 transition font-medium"
+              >
                 Kirim Pengaduan
               </button>
             </>
