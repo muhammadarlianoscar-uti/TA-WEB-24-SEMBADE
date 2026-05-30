@@ -101,7 +101,7 @@ export default function PelayananPage() {
                 name="category"
                 value={form.category}
                 onChange={handleChange}
-                className="w-full border p-3 rounded-lg bg-white"
+                className="w-full appearance-none border p-3 rounded-lg bg-white pr-10"
                 required
               >
                 <option value="" disabled>
