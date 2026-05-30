@@ -98,28 +98,36 @@ export default function DomisiliPage() {
           <div className="bg-gray-50 border p-4 rounded-xl mb-4">
             <p className="font-semibold mb-2">Upload Dokumen</p>
 
-            <div className="bg-blue-100 border border-blue-300 p-1 rounded mb-3 text-center">
-              <p className="text-sm">Upload KTP</p>
-              <input
-                type="file"
-                name="ktp"
-                onChange={handleFile}
-                className="hidden"
-                accept="image/*,.pdf"
-                required
-              />
+            <div className="mb-3">
+              <label className="block text-sm text-gray-600 mb-1">
+                Upload KTP
+              </label>
+              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <input
+                  type="file"
+                  name="ktp"
+                  onChange={handleFile}
+                  className="hidden"
+                  accept="image/*,.pdf"
+                  required
+                />
+              </label>
             </div>
 
-            <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center">
-              <p className="text-sm">Upload KK</p>
-              <input
-                type="file"
-                name="kk"
-                onChange={handleFile}
-                className="hidden"
-                accept="image/*,.pdf"
-                required
-              />
+            <div>
+              <label className="block text-sm text-gray-600 mb-1">
+                Upload KK
+              </label>
+              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <input
+                  type="file"
+                  name="kk"
+                  onChange={handleFile}
+                  className="hidden"
+                  accept="image/*,.pdf"
+                  required
+                />
+              </label>
             </div>
           </div>
 
