@@ -86,7 +86,7 @@ export default function PelayananPage() {
           Form Pengaduan Masyarakat
         </h2>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           {/* 2 kolom */}
           <div className="grid md:grid-cols-2 gap-4">
             <input
