@@ -115,6 +115,7 @@ export default function PelayananPage() {
           {form.category === "lainnya" && (
             <input
               name="customCategory"
+              value={form.customCategory}
               placeholder="Tulis jenis pengaduan"
               onChange={handleChange}
               className="w-full border p-2 rounded-lg bg-white mt-4"
