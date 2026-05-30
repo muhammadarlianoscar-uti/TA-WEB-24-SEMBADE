@@ -49,7 +49,7 @@ export default function SKTMPage() {
         </h1>
 
         <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">
-          KTP, KK, Surat RT
+          KTP, KK, Surat pengantar RT
         </div>
 
         <form onSubmit={handleSend} autoComplete="off">
@@ -58,29 +58,37 @@ export default function SKTMPage() {
 
             <input
               name="name"
+              value={data.name}
               onChange={handleChange}
               placeholder="Nama"
+              required
               className="w-full border p-2 rounded mb-2"
             />
 
             <input
               name="nik"
+              value={data.nik}
               onChange={handleChange}
               placeholder="NIK"
+              required
               className="w-full border p-2 rounded mb-2"
             />
 
             <input
               name="address"
+              value={data.address}
               onChange={handleChange}
               placeholder="Alamat"
+              required
               className="w-full border p-2 rounded"
             />
 
             <input
               name="purpose"
+              value={data.purpose}
               onChange={handleChange}
               placeholder="Keperluan"
+              required
               className="w-full border p-2 mt-2 rounded"
             />
           </div>
@@ -94,6 +102,7 @@ export default function SKTMPage() {
               value={data.job}
               onChange={handleChange}
               placeholder="Pekerjaan"
+              required
               className="w-full border p-2 rounded mb-2"
             />
 
