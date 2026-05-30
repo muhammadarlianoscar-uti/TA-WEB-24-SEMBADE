@@ -103,7 +103,7 @@ export default function PelayananPage() {
               className="w-full border p-3 rounded-lg bg-white"
               required
             >
-              <option value="">Jenis Pengaduan</option>
+              <option value="" disabled>Jenis Pengaduan</option>
               <option value="jalan">Jalan Rusak</option>
               <option value="sampah">Sampah</option>
               <option value="lampu">Lampu Jalan</option>
