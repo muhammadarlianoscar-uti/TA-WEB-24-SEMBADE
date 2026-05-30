@@ -31,6 +31,10 @@ export default function DomisiliPage() {
     e.preventDefault();
     console.log("DOMISILI:", data, files);
     alert("Pengajuan Surat Domisili berhasil dikirim");
+
+    setData(initialData);
+    setFiles(initialFiles);
+    e.target.reset();
   };
 
   return (
