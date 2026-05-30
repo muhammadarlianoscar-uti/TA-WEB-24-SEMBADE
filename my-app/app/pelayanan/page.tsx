@@ -98,6 +98,7 @@ export default function PelayananPage() {
             />
             <select
               name="category"
+              value={form.category}
               onChange={handleChange}
               className="w-full border p-3 rounded-lg bg-white"
               required
