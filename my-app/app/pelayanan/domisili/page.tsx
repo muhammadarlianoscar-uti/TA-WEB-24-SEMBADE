@@ -100,12 +100,24 @@ export default function DomisiliPage() {
 
             <div className="bg-blue-100 border border-blue-300 p-1 rounded mb-3 text-center">
               <p className="text-sm">Upload KTP</p>
-              <input type="file" name="ktp" onChange={handleFile} />
+              <input
+                type="file"
+                name="ktp"
+                onChange={handleFile}
+                accept="image/*,.pdf"
+                required
+              />
             </div>
 
             <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center">
               <p className="text-sm">Upload KK</p>
-              <input type="file" name="kk" onChange={handleFile} />
+              <input
+                type="file"
+                name="kk"
+                onChange={handleFile}
+                accept="image/*,.pdf"
+                required
+              />
             </div>
           </div>
 
