@@ -112,8 +112,8 @@ export default function SKTMPage() {
                 name="income"
                 value={data.income}
                 onChange={handleChange}
-                className="w-full border p-2 rounded bg-white text-gray-700"
                 required
+                className="w-full appearance-none pr-10 border p-2 rounded bg-white text-gray-700"
               >
                 <option value="" disabled>
                   Pilih Penghasilan Per Bulan
@@ -124,7 +124,7 @@ export default function SKTMPage() {
                 <option value="3jt - 5jt">Rp 3.000.000 - Rp 5.000.000</option>
                 <option value="> 5jt">Lebih dari Rp 5.000.000</option>
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-3 flex item-center text-gray-500">
+              <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
                 <svg
                   className="h-4 w-4"
                   fill="none"
@@ -143,21 +143,74 @@ export default function SKTMPage() {
             </div>
           </div>
 
-          <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center mb-4">
-            <p>Upload KTP</p>
-            <input type="file" onChange={handleFile} />
-          </div>
-          <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center mb-4">
-            <p>Upload KK</p>
-            <input type="file" onChange={handleFile} />
-          </div>
-          <div className="bg-blue-100 border border-blue-300 p-1 rounded text-center mb-4">
-            <p>Upload Surat RT</p>
-            <input type="file" onChange={handleFile} />
+          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
+            <p className="font-semibold mb-3">Upload Dokumen</p>
+
+            <div className="mb-3">
+              <label className="block text-sm text-gray-600 mb-1">
+                Upload KTP
+              </label>
+              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <span className="text-sm text-gray-500">
+                  {files.ktp ? files.ktp.name : "Pilih file KTP"}
+                </span>
+                <input
+                  type="file"
+                  name="ktp"
+                  onChange={handleFile}
+                  className="hidden"
+                  accept="image/*,.pdf"
+                  required
+                />
+              </label>
+            </div>
+
+            <div className="mb-3">
+              <label className="block text-sm text-gray-600 mb-1">
+                Upload KK
+              </label>
+              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <span className="text-sm text-gray-500">
+                  {files.kk ? files.kk.name : "Pilih file KK"}
+                </span>
+                <input
+                  type="file"
+                  name="kk"
+                  onChange={handleFile}
+                  className="hidden"
+                  accept="image/*,.pdf"
+                  required
+                />
+              </label>
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-600 mb-1">
+                Upload Surat pengantar RT
+              </label>
+              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
+                <span className="text-sm text-gray-500">
+                  {files.suratRt
+                    ? files.suratRt.name
+                    : "Pilih file Surat pengantar RT"}
+                </span>
+                <input
+                  type="file"
+                  name="suratRt"
+                  onChange={handleFile}
+                  className="hidden"
+                  accept="image/*,.pdf"
+                  required
+                />
+              </label>
+            </div>
           </div>
 
-          <button className="w-full bg-green-600 text-white p-3 rounded-xl">
-            Kirim
+          <button
+            type="submit"
+            className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700 transition mb-4"
+          >
+            Kirim Pengajuan
           </button>
 
           <BackButton />
