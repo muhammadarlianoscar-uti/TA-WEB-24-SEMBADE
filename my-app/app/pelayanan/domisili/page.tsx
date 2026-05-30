@@ -54,22 +54,28 @@ export default function DomisiliPage() {
 
             <input
               name="name"
+              value={data.name}
               placeholder="Nama"
               onChange={handleChange}
+              required
               className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
             />
 
             <input
               name="nik"
+              value={data.nik}
               placeholder="NIK"
               onChange={handleChange}
+              required
               className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
             />
 
             <input
               name="address"
+              value={data.address}
               placeholder="Alamat"
               onChange={handleChange}
+              required
               className="w-full border p-2 rounded focus:ring-2 focus:ring-green-400 outline-none"
             />
           </div>
@@ -80,7 +86,9 @@ export default function DomisiliPage() {
 
             <textarea
               name="purpose"
+              value={data.purpose}
               onChange={handleChange}
+              required
               className="w-full border p-2 rounded h-24 focus:ring-2 focus:ring-green-400 outline-none"
               placeholder="Contoh: untuk melamar kerja"
             />
