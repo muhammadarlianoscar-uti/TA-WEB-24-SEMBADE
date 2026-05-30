@@ -43,7 +43,7 @@ export default function DomisiliPage() {
         <h1 className="text-xl font-bold mb-4">📄 Surat Domisili</h1>
 
         {/* SYARAT */}
-        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">
+        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">Syarat :
           Fotokopi KTP & KK
         </div>
 

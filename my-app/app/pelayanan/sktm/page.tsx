@@ -48,7 +48,7 @@ export default function SKTMPage() {
           💸 SKTM ( Surat Keterangan Tidak Mampu )
         </h1>
 
-        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">
+        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">Syarat :
           KTP, KK, Surat pengantar RT
         </div>
 

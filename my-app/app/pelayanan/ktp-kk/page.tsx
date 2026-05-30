@@ -43,7 +43,7 @@ export default function KTPPage() {
       <div className="bg-white p-6 rounded-2xl shadow">
         <h1 className="text-xl font-bold mb-4">🪪 KTP / KK</h1>
 
-        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">
+        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">Syarat :
           KK & Surat pengantar RT
         </div>
 
