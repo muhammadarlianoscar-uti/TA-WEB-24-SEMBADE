@@ -138,11 +138,11 @@ export default function PelayananPage() {
 
           {/* upload */}
           <div className="mt-4">
-            <label className="block mb-3 text-sm font-medium text-white">
+            <label className="block mb-2 text-sm font-medium text-white">
               Upload Foto
             </label>
 
-            <div className="bg-blue-100 border border-blue-300 p-1 rounded-lg text-center hover:bg-blue-200 transition">
+            <div className="bg-blue-200 border border-blue-300 p-1 rounded-lg text-center hover:bg-blue-400 transition">
               <input
                 type="file"
                 name="image"
@@ -154,7 +154,7 @@ export default function PelayananPage() {
             <p className="text-xs text-white mt-1">Maksimal 5MB (jpg/png)</p>
           </div>
 
-          <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-blue-400">
+          <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-yellow-400">
             Kirim Pengaduan
           </button>
         </form>
