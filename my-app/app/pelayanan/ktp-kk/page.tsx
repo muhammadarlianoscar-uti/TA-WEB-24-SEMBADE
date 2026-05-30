@@ -53,22 +53,28 @@ export default function KTPPage() {
 
             <input
               name="name"
+              value={data.name}
               onChange={handleChange}
               placeholder="Nama"
+              required
               className="w-full border p-2 rounded mb-2"
             />
 
             <input
               name="nik"
+              value={data.nik}
               onChange={handleChange}
               placeholder="NIK"
+              required
               className="w-full border p-2 rounded mb-2"
             />
 
             <input
               name="address"
+              value={data.address}
               onChange={handleChange}
               placeholder="Alamat"
+              required
               className="w-full border p-2 rounded"
             />
           </div>
@@ -88,7 +94,9 @@ export default function KTPPage() {
 
             <textarea
               name="purpose"
+              value={data.purpose}
               onChange={handleChange}
+              required
               className="w-full border p-2 rounded h-24"
               placeholder="Keperluan"
             />
