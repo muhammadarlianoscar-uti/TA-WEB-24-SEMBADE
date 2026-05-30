@@ -117,7 +117,9 @@ export default function PelayananPage() {
               required
             />
           )}
-
+          
+          {form.category && form.category !== "" && (
+            <>
           {/* alamat */}
           <input
             name="address"
@@ -157,6 +159,8 @@ export default function PelayananPage() {
           <button className=" bg-blue-500 text-white p-1.5 rounded-lg mt-6 hover:bg-yellow-400">
             Kirim Pengaduan
           </button>
+          </>
+          )}
         </form>
       </div>
     </div>
