@@ -91,6 +91,7 @@ export default function PelayananPage() {
           <div className="grid md:grid-cols-2 gap-4">
             <input
               name="name"
+              value={form.name}
               placeholder="Nama"
               onChange={handleChange}
               className="w-full border p-2 rounded-lg bg-white"
