@@ -57,11 +57,11 @@ export default function PotensiPage() {
           (item) => item.category === activeFilter
         );
 
+        {/* HEADER */}
   return (
-
+    
     <div className="min-h-screen bg-slate-50">
 
-      {/* HEADER */}
       {/* bagian pembuka halaman yang berisi judul dan deskripsi */}
       <section className="relative bg-white pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden shadow-sm">
 
