@@ -433,6 +433,7 @@ export default function Home() {
               Kirim Laporan
             </button>
           </div>
+          <p className="text-xs text-slate-500 mt-4">Laporan Anda dilindungi sistem enkripsi privasi aman.</p>
         </div>
       </section>
 
