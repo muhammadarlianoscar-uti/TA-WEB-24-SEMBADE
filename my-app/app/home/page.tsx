@@ -429,7 +429,9 @@ export default function Home() {
               placeholder="Ketik aspirasi atau keluhan Anda di sini..." 
               className="bg-transparent text-white placeholder-slate-400 px-4 py-3 rounded-xl flex-1 focus:outline-none text-sm"
             />
-            
+            <button className="bg-emerald-500 hover:bg-emerald-400 text-white font-medium text-sm py-3 px-6 rounded-xl transition-colors whitespace-nowrap">
+              Kirim Laporan
+            </button>
           </div>
         </div>
       </section>
