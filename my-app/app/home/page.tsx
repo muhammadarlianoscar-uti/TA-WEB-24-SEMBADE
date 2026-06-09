@@ -247,7 +247,10 @@ export default function Home() {
             <p className="text-4xl font-extrabold text-emerald-600">120+</p>
             <p className="text-slate-600 font-medium mt-2">UMKM Aktif</p>
           </div>
-          
+          <div>
+            <p className="text-4xl font-extrabold text-emerald-600">100%</p>
+            <p className="text-slate-600 font-medium mt-2">Digitalisasi Desa</p>
+          </div>
         </div>
       </section>
 
