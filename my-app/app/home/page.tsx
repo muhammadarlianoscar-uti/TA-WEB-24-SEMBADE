@@ -294,6 +294,7 @@ export default function Home() {
               <span className="text-xs font-semibold uppercase tracking-wider text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md">Kesehatan</span>
               <h3 className="text-xl font-bold text-slate-800 mt-2 mb-1">Posyandu Serentak & Sosialisasi Gizi Sehat Anak</h3>
               <p className="text-slate-500 text-sm flex items-center gap-4">
+                <span>⏰ 08:00 - 12:00 WIB</span>
                 
               </p>
             </div>
