@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function PelayananPage() {
   const [open, setOpen] = useState(false);
 
+  // data awal form
   const initialFormState = {
     name: "",
     category: "",
@@ -25,7 +26,10 @@ export default function PelayananPage() {
     }
   };
 
+  // memproses data saat form dikirim
   const handleSubmit = (e: any) => {
+    
+    // mencegah refresh halaman otomatis saat submit
     e.preventDefault();
 
     const finalCategory =
