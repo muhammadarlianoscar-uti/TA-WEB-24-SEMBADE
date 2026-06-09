@@ -295,7 +295,7 @@ export default function Home() {
               <h3 className="text-xl font-bold text-slate-800 mt-2 mb-1">Posyandu Serentak & Sosialisasi Gizi Sehat Anak</h3>
               <p className="text-slate-500 text-sm flex items-center gap-4">
                 <span>⏰ 08:00 - 12:00 WIB</span>
-                
+                <span>📍 Poskesdes Terpadu RW 04</span>
               </p>
             </div>
            </div>
