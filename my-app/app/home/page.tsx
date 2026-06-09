@@ -239,7 +239,11 @@ export default function Home() {
             <p className="text-4xl font-extrabold text-emerald-600">3.500+</p>
             <p className="text-slate-600 font-medium mt-2">Penduduk</p>
           </div>
-        
+          <div>
+            <p className="text-4xl font-extrabold text-emerald-600">45</p>
+            <p className="text-slate-600 font-medium mt-2">RT / RW</p>
+          </div>
+         
         </div>
       </section>
 
