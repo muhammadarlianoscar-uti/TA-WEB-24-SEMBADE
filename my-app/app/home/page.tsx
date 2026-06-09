@@ -232,6 +232,17 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ================= SECTION 4: STATISTIK SINGKAT ================= */}
+      <section className="bg-emerald-50 py-16 px-4 sm:px-6 lg:px-8 border-t border-emerald-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <p className="text-4xl font-extrabold text-emerald-600">3.500+</p>
+            <p className="text-slate-600 font-medium mt-2">Penduduk</p>
+          </div>
+        
+        </div>
+      </section>
+
     </div>
   );
 }
