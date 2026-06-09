@@ -253,6 +253,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* ================= SECTION 5: AGENDA KEGIATAN MENDATANG ================= */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        
+      </section>
 
     </div>
   );
