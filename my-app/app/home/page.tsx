@@ -412,15 +412,25 @@ export default function Home() {
         </div>
       </section>
       
-      {/* ================= SECTION 6: ASPIRASI & PENGADUAN WARGA ================= */}
+     {/* ================= SECTION 6: ASPIRASI & PENGADUAN WARGA ================= */}
       <section className="py-16 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
+        
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold">Kotak Aspirasi & Pengaduan Online</h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
             Punya saran, keluhan perbaikan infrastruktur, atau aspirasi pembangunan desa? Kirimkan laporan Anda langsung ke admin desa melalui sistem terintegrasi.
           </p>
+          
+          {/* INPUT FORM MOCKUP */}
+          <div className="mt-10 max-w-xl mx-auto bg-white/5 p-3 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col sm:flex-row gap-2 shadow-xl">
+            <input 
+              type="text" 
+              placeholder="Ketik aspirasi atau keluhan Anda di sini..." 
+              className="bg-transparent text-white placeholder-slate-400 px-4 py-3 rounded-xl flex-1 focus:outline-none text-sm"
+            />
+            
+          </div>
         </div>
       </section>
 
