@@ -284,7 +284,13 @@ export default function Home() {
             <button className="text-sm font-semibold border border-slate-200 hover:border-emerald-500 hover:text-emerald-600 py-2 px-5 rounded-xl transition-colors w-full sm:w-auto">Detail</button>
           </div>
 
-    
+          {/* Kegiatan 2 */}
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center gap-6 hover:shadow-md transition-shadow">
+            <div className="bg-emerald-50 text-emerald-700 p-4 rounded-xl text-center font-bold min-w-[80px] w-full sm:w-auto">
+              <span className="block text-2xl leading-none">22</span>
+              <span className="text-xs uppercase tracking-wider block mt-1">Juni</span>
+            </div>
+            </div>
         </div>
       </section>
 
