@@ -256,7 +256,17 @@ export default function Home() {
       
       {/* ================= SECTION 5: AGENDA KEGIATAN MENDATANG ================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
+          <div>
+            <h2 className="text-3xl font-bold text-emerald-800">Agenda Kegiatan Mendatang</h2>
+            <div className="w-16 h-1 bg-emerald-500 mt-4 rounded-full"></div>
+          </div>
+          <Link href="/agenda" className="text-emerald-600 font-semibold hover:text-emerald-800 text-sm">
+            Lihat Semua Jadwal &rarr;
+          </Link>
+        </div>
+
+       
       </section>
 
     </div>
