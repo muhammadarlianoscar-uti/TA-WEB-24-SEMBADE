@@ -273,9 +273,18 @@ export default function Home() {
               <span className="block text-2xl leading-none">15</span>
               <span className="text-xs uppercase tracking-wider block mt-1">Juni</span>
             </div>
-            
+            <div className="flex-1">
+              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">Musyawarah</span>
+              <h3 className="text-xl font-bold text-slate-800 mt-2 mb-1">Rapat Koordinasi Pembangunan Desa (Musrenbang)</h3>
+              <p className="text-slate-500 text-sm flex items-center gap-4">
+                <span>⏰ 09:00 WIB - Selesai</span>
+                <span>📍 Balai Pertemuan Utama</span>
+              </p>
+            </div>
+            <button className="text-sm font-semibold border border-slate-200 hover:border-emerald-500 hover:text-emerald-600 py-2 px-5 rounded-xl transition-colors w-full sm:w-auto">Detail</button>
           </div>
 
+    
         </div>
       </section>
 
