@@ -37,7 +37,7 @@ const beritaData = [
     title: "Peningkatan Jalan Desa untuk Akses Masyarakat",
     desc: "Pembangunan dan perbaikan jalan desa dilakukan untuk memperlancar aktivitas warga dan distribusi hasil pertanian.",
     captionFoto: "Proses pengecoran jalan poros desa tahap pertama.",
-    image: "/images/berita4.jpg",
+    image: "/images/peningkatanjalan.webp",
     views: 87,
     date: "01 Mei 2026",
   },
