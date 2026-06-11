@@ -48,7 +48,7 @@ const beritaData = [
     captionFoto: "Pertunjukan tari tradisional oleh pemudi desa.",
     image: "/images/festivalbudaya.webp",
     views: 210,
-    date: "28 April 2026",
+    date: "28 April 2026.webp",
   },
   {
     id: 6,
@@ -140,6 +140,7 @@ export default function Berita() {
                   }`}
                 />
 
+                
                 {/* Overlay saat gambar MASIH BLUR */}
                 {!isRevealed && (
 
@@ -170,7 +171,8 @@ export default function Berita() {
 
                       {/* memberikan identitas bahwa teks berikut adalah keterangan foto */}
                       <span className="text-emerald-400 font-bold mr-1">Catatan:</span> 
-
+                        {item.captionFoto}
+                        
                       {/* menampilkan icon admin dan nama penulis berupa link */}
                       <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
