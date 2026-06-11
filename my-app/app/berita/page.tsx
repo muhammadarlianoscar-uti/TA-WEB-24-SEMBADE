@@ -19,7 +19,7 @@ const beritaData = [
     title: "Pelatihan Teknologi SmartDes untuk Pemuda Desa",
     desc: "Pemerintah desa mengadakan pelatihan teknologi digital dan smart village untuk meningkatkan kemampuan pemuda desa.",
     captionFoto: "Sesi praktik penggunaan aplikasi administrasi desa.",
-    image: "/image/berita2.jpg",
+    image: "/images/pelatihan.webp",
     views: 98,
     date: "05 Mei 2026",
   },
