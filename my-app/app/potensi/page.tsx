@@ -293,26 +293,10 @@ export default function PotensiPage() {
             <h3 className="text-lg font-semibold text-slate-300 mb-6">Grafik Tren Pendapatan Desa</h3>
               <div className="relative w-full h-52 flex flex-col justify-between">
 
-                {/* Batang 1 */}
-                <div className="w-1/3 flex flex-col items-center group">
-                  <span className="text-emerald-400 text-xs font-bold mb-2 opacity-0 group-hover:opacity-100 transition-opacity">Rp 200Jt</span>
-                  <div className="w-full bg-slate-700 hover:bg-emerald-500 transition-colors duration-500 rounded-t-md h-[40%] relative"></div>
-                  <span className="text-slate-400 text-sm mt-3">2024</span>
-                </div>
-
-                {/* Batang 2 */}
-                <div className="w-1/3 flex flex-col items-center group">
-                  <span className="text-emerald-400 text-xs font-bold mb-2 opacity-0 group-hover:opacity-100 transition-opacity">Rp 450Jt</span>
-                  <div className="w-full bg-slate-700 hover:bg-emerald-500 transition-colors duration-500 rounded-t-md h-[70%] relative"></div>
-                  <span className="text-slate-400 text-sm mt-3">2025</span>
-                </div>
-                
-                {/* Batang 3 */}
-                <div className="w-1/3 flex flex-col items-center group">
-                  <span className="text-emerald-400 text-xs font-bold mb-2 opacity-100 transition-opacity">Rp 800Jt</span>
-                  <div className="w-full bg-emerald-500 shadow-[0_0_15px_rgba(16,185,129,0.4)] rounded-t-md h-[100%] relative"></div>
-                  <span className="text-white font-bold text-sm mt-3">2026</span>
-                </div>
+                <svg viewBox="0 0 300 150" className="w-full h-full overflow-visible">
+      
+                  
+                </svg>
               </div>
             </div>
           </div>
