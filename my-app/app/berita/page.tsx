@@ -28,7 +28,7 @@ const beritaData = [
     title: "Peresmian Taman Hijau sebagai Ruang Publik Desa",
     desc: "Taman hijau baru resmi dibuka untuk masyarakat sebagai tempat rekreasi dan area edukasi lingkungan.",
     captionFoto: "Pemotongan pita peresmian taman oleh Kepala Desa.",
-    image: "/images/berita3.jpg",
+    image: "/images/tamanhijau.webp",
     views: 150,
     date: "03 Mei 2026",
   },
