@@ -320,28 +320,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= SECTION 4: STATISTIK SINGKAT ================= */}
-      <section className="bg-emerald-50 py-16 px-4 sm:px-6 lg:px-8 border-t border-emerald-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div>
-            <p className="text-4xl font-extrabold text-emerald-600">3.500+</p>
-            <p className="text-slate-600 font-medium mt-2">Penduduk</p>
-          </div>
-          <div>
-            <p className="text-4xl font-extrabold text-emerald-600">45</p>
-            <p className="text-slate-600 font-medium mt-2">RT / RW</p>
-          </div>
-          <div>
-            <p className="text-4xl font-extrabold text-emerald-600">120+</p>
-            <p className="text-slate-600 font-medium mt-2">UMKM Aktif</p>
-          </div>
-          <div>
-            <p className="text-4xl font-extrabold text-emerald-600">100%</p>
-            <p className="text-slate-600 font-medium mt-2">Digitalisasi Desa</p>
-          </div>
-        </div>
-      </section>
-
       {/* ================= SECTION 5: AGENDA KEGIATAN MENDATANG ================= */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
@@ -359,15 +337,19 @@ export default function Home() {
           </Link>
         </div>
 
+        {/* space-y-6 = Memberi jarak otomatis antar-baris agenda ke bawah sejauh 24pixel */}
         <div className="space-y-6">
-          {/* Kegiatan 1 */}
+          {/* BARIS AGENDA 1: Musrenbang
+              flex-col sm:flex-row = Di layar HP elemen tanggal & info bertumpuk vertikal, di layar komputer otomatis berjejer horizontal sampingan. */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center gap-6 hover:shadow-md transition-shadow">
+            {/* Box Kalender Digital Kiri: min-w-[80px] = mengunci lebar kotak tanggal agar tidak mengkerut/peang saat teks judul di kanannya terlalu panjang. */}
             <div className="bg-emerald-50 text-emerald-700 p-4 rounded-xl text-center font-bold min-w-[80px] w-full sm:w-auto">
               <span className="block text-2xl leading-none">15</span>
               <span className="text-xs uppercase tracking-wider block mt-1">
                 Juni
               </span>
             </div>
+            {/* Info detail agenda tengah */}
             <div className="flex-1">
               <span className="text-xs font-semibold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-md">
                 Musyawarah
@@ -385,7 +367,7 @@ export default function Home() {
             </button>
           </div>
 
-          {/* Kegiatan 2 */}
+          {/* BARIS AGENDA 2: Posyandu */}
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row items-start sm:items-center gap-6 hover:shadow-md transition-shadow">
             <div className="bg-emerald-50 text-emerald-700 p-4 rounded-xl text-center font-bold min-w-[80px] w-full sm:w-auto">
               <span className="block text-2xl leading-none">22</span>
@@ -405,39 +387,48 @@ export default function Home() {
                 <span>📍 Poskesdes Terpadu RW 04</span>
               </p>
             </div>
-            <div className="text-sm font-semibold border border-slate-200 hover:border-emerald-500 hover:text-emerald-600 py-2 px-5 rounded-xl transition-colors w-full sm:w-auto text-center cursor-pointer">
+            <button className="text-sm font-semibold border border-slate-200 hover:border-emerald-500 hover:text-emerald-600 py-2 px-5 rounded-xl transition-colors w-full sm:w-auto">
               Detail
-            </div>
+            </button>
           </div>
         </div>
       </section>
-      
-     {/* ================= SECTION 6: ASPIRASI & PENGADUAN WARGA ================= */}
+
+      {/* ================= SECTION 6: ASPIRASI & PENGADUAN WARGA ================= */}
       <section className="py-16 bg-slate-900 text-white relative overflow-hidden">
+        {/* Bulatan hiasan abstrak bercahaya di pojok kanan latar belakang section.
+            blur-3xl = Membiaskan warna lingkaran sejauh maksimal agar lembut mirip asap lampu neon. */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        
+
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-3xl font-bold">Kotak Aspirasi & Pengaduan Online</h2>
+          <h2 className="text-3xl font-bold">
+            Kotak Aspirasi & Pengaduan Online
+          </h2>
           <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
-            Punya saran, keluhan perbaikan infrastruktur, atau aspirasi pembangunan desa? Kirimkan laporan Anda langsung ke admin desa melalui sistem terintegrasi.
+            Punya saran, keluhan perbaikan infrastruktur, atau aspirasi
+            pembangunan desa? Kirimkan laporan Anda langsung ke admin desa
+            melalui sistem terintegrasi.
           </p>
-          
-          {/* INPUT FORM MOCKUP */}
+
+          {/* INPUT FORM MOCKUP:
+              bg-white/5 = Menggunakan warna putih transparan sangat tipis (5%) agar warna background gelap di belakangnya sedikit menembus (tren glassmorphism). */}
           <div className="mt-10 max-w-xl mx-auto bg-white/5 p-3 rounded-2xl border border-white/10 backdrop-blur-md flex flex-col sm:flex-row gap-2 shadow-xl">
-            <input 
-              type="text" 
-              placeholder="Ketik aspirasi atau keluhan Anda di sini..." 
+            {/* focus:outline-none = Menghilangkan garis bingkai kotak hitam default dari browser saat kolom input teks diklik oleh user. */}
+            <input
+              type="text"
+              placeholder="Ketik aspirasi atau keluhan Anda di sini..."
               className="bg-transparent text-white placeholder-slate-400 px-4 py-3 rounded-xl flex-1 focus:outline-none text-sm"
             />
+            {/* whitespace-nowrap = Memaksa teks tombol "Kirim Laporan" agar tetap tegak lurus sebaris dan dilarang patah menjadi 2 baris meskipun layar menyusut kecil. */}
             <button className="bg-emerald-500 hover:bg-emerald-400 text-white font-medium text-sm py-3 px-6 rounded-xl transition-colors whitespace-nowrap">
               Kirim Laporan
             </button>
           </div>
-          <p className="text-xs text-slate-500 mt-4">Laporan Anda dilindungi sistem enkripsi privasi aman.</p>
+          <p className="text-xs text-slate-500 mt-4">
+            Laporan Anda dilindungi sistem enkripsi privasi aman.
+          </p>
         </div>
       </section>
-
-      
     </div>
   );
 }

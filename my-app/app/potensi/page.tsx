@@ -3,6 +3,8 @@
 // mengimporkan react dan hook usestate
 import React, { useState } from 'react';
 
+import Image from 'next/image';
+
 // membuat komponen utama halaman potensi smatdes
 export default function PotensiPage() {
 
@@ -18,21 +20,24 @@ export default function PotensiPage() {
       id: 1,
       title: "Pertanian Organik",
       category: "Pertanian",
-      description: "Pemanfaatan lahan subur untuk komoditas organik."
+      description: "Pemanfaatan lahan subur untuk komoditas organik.",
+      image: "/images/pertanianorg.webp" // Memperbaiki koma yang hilang di baris deskripsi atas
     },
 
     {
       id: 2,
       title: "Pariwisata Alam",
       category: "Pariwisata",
-      description: "Destinasi wisata pegunungan dan air terjun."
+      description: "Destinasi wisata pegunungan dan air terjun.",
+      image: "/images/pariwisata.webp" // Menambahkan path gambar pariwisata
     },
 
     {
       id: 3,
       title: "Sentra UMKM",
       category: "UMKM",
-      description: "Pusat kerajinan tangan dan kuliner desa."
+      description: "Pusat kerajinan tangan dan kuliner desa.",
+      image: "/images/umkm.webp" // Menambahkan path gambar UMKM
     },
 
   ];
@@ -57,7 +62,7 @@ export default function PotensiPage() {
           (item) => item.category === activeFilter
         );
 
-        {/* HEADER */}
+  {/* HEADER */}
   return (
     
     <div className="min-h-screen bg-slate-50">
@@ -134,24 +139,23 @@ export default function PotensiPage() {
 
               <div
                 key={item.id}
-                className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col"
               >
 
                 {/* IMAGE */}
-                {/*Placeholder gambar */}
-                <div className="h-56 bg-emerald-50 flex items-center justify-center">
-
-                  <span className="text-emerald-300 text-lg font-semibold">
-
-                    Gambar: {item.title}
-
-                  </span>
-
+                {/* UPDATE: Mengganti teks placeholder dengan komponen Image Next.js asli */}
+                <div className="relative h-56 w-full overflow-hidden bg-emerald-50">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
 
                 {/* CONTENT */}
                 {/* isi card */}
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-grow">
 
                   {/* judul potensi */}
                   <h3 className="text-2xl font-bold mb-3 text-slate-800">
@@ -161,18 +165,20 @@ export default function PotensiPage() {
                   </h3>
 
                   {/* deskripsi potensi */}
-                  <p className="text-slate-600 mb-6 leading-relaxed">
+                  <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
 
                     {item.description}
 
                   </p>
 
                   {/* label kategori */}
-                  <span className="px-3 py-1 bg-emerald-100 rounded-full text-sm text-emerald-700 font-medium">
+                  <div>
+                    <span className="px-3 py-1 bg-emerald-100 rounded-full text-sm text-emerald-700 font-medium">
 
-                    {item.category}
+                      {item.category}
 
-                  </span>
+                    </span>
+                  </div>
 
                 </div>
 
@@ -333,7 +339,7 @@ export default function PotensiPage() {
                 Peta Sebaran Potensi SmartDes
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Dilengkapi dengan Geographic Information System (GIS) terintegrasi, memudahkan investor dan wisatawan menemukan lokasi potensi unggulan desa kami secara real-time.
+                Dilengkapi dengan Geographic Information System (GIS) terintegrated, memudahkan investor dan wisatawan menemukan lokasi potensi unggulan desa kami secara real-time.
               </p>
 
               {/* sebagai tombol menuju halaman peta */}
