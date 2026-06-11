@@ -29,7 +29,7 @@ export default function PotensiPage() {
       title: "Pariwisata Alam",
       category: "Pariwisata",
       description: "Destinasi wisata pegunungan dan air terjun.",
-      image: "/images/pariwisata.webp" // Menambahkan path gambar pariwisata
+      image: "/images/wisata.webp" // Menambahkan path gambar pariwisata
     },
 
     {
