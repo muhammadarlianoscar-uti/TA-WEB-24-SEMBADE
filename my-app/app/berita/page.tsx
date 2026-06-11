@@ -206,6 +206,12 @@ export default function Berita() {
                 <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-sm text-slate-500">
                   <div className="flex items-center gap-2">
                   <div className="mb-6">
+                    <Link 
+                    href={item.url || "#"} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm font-bold text-emerald-600 hover:text-emerald-700 hover:underline gap-1 transition-colors"
+                  ></Link>
           
                 </div>
               </div>
