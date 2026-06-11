@@ -294,7 +294,8 @@ export default function PotensiPage() {
               <div className="relative w-full h-52 flex flex-col justify-between">
 
                 <svg viewBox="0 0 300 150" className="w-full h-full overflow-visible">
-      
+                {/* Garis Bantu Grid */}
+                  <line x1="0" y1="120" x2="300" y2="120" stroke="#334155" strokeDasharray="4" />
                   
                 </svg>
               </div>
