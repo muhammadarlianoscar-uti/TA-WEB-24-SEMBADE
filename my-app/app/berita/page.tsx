@@ -211,7 +211,9 @@ export default function Berita() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm font-bold text-emerald-600 hover:text-emerald-700 hover:underline gap-1 transition-colors"
-                  ></Link>
+                  >
+                    Baca Selengkapnya
+                  </Link>
           
                 </div>
               </div>
