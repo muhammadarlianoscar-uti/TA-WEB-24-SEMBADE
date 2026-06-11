@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 
 // Menambahkan properti "captionFoto" untuk catatan pada foto
 const beritaData = [
@@ -12,7 +13,7 @@ const beritaData = [
     captionFoto: "Warga membersihkan selokan utama di RT 01.",
     image: "/images/gtngryng.webp",
     views: 120,
-    date: "07 Mei 2026",
+    date: "07 Mei 2026"
   },
   {
     id: 2,
@@ -48,7 +49,7 @@ const beritaData = [
     captionFoto: "Pertunjukan tari tradisional oleh pemudi desa.",
     image: "/images/festivalbudaya.webp",
     views: 210,
-    date: "28 April 2026.webp",
+    date: "28 April 2026",
   },
   {
     id: 6,
@@ -140,7 +141,6 @@ export default function Berita() {
                   }`}
                 />
 
-                
                 {/* Overlay saat gambar MASIH BLUR */}
                 {!isRevealed && (
 
@@ -149,6 +149,7 @@ export default function Berita() {
 
                     {/* memberikan petunjuk bahwa gambar dapat dibuka */}
                     <span className="bg-white/90 text-emerald-800 px-5 py-2.5 rounded-full font-bold text-sm shadow-lg flex items-center gap-2 group-hover:scale-105 transition-transform">
+                      
 
                       {/* Menampilkan Ikon mata */}
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +173,7 @@ export default function Berita() {
                       {/* memberikan identitas bahwa teks berikut adalah keterangan foto */}
                       <span className="text-emerald-400 font-bold mr-1">Catatan:</span> 
                         {item.captionFoto}
-                        
+
                       {/* menampilkan icon admin dan nama penulis berupa link */}
                       <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
@@ -204,10 +205,7 @@ export default function Berita() {
                 <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-sm text-slate-500">
                   <div className="flex items-center gap-2">
 
-                    {/* menampilkan icon admin */}
-                    <svg className="w-4 h-4 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                    </svg>
+                    
                   </div>
                   
                   {/* menampilkan jumlah orang yang melihat berita */}
