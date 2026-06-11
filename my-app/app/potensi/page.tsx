@@ -290,6 +290,7 @@ export default function PotensiPage() {
             {/* SECTION VISUALISASI PERTUMBUHAN PENDAPATAN */}
             {/* membuat kotak grafik */}
             <div className="lg:w-1/2 w-full max-w-md bg-slate-900 rounded-3xl p-8 shadow-xl border border-slate-700">
+            <h3 className="text-lg font-semibold text-slate-300 mb-6">Grafik Tren Pendapatan Desa</h3>
               <div className="relative w-full h-52 flex flex-col justify-between">
 
                 {/* Batang 1 */}
