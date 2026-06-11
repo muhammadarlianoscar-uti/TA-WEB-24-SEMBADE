@@ -13,7 +13,8 @@ const beritaData = [
     captionFoto: "Warga membersihkan selokan utama di RT 01.",
     image: "/images/gtngryng.webp",
     views: 120,
-    date: "07 Mei 2026"
+    date: "07 Mei 2026",
+
   },
   {
     id: 2,
@@ -204,9 +205,10 @@ export default function Berita() {
                 {/* menampilkan informasi tembahan */}
                 <div className="mt-auto pt-4 border-t border-slate-100 flex justify-between items-center text-sm text-slate-500">
                   <div className="flex items-center gap-2">
-
-                    
-                  </div>
+                  <div className="mb-6">
+          
+                </div>
+              </div>
                   
                   {/* menampilkan jumlah orang yang melihat berita */}
                   <div className="flex items-center gap-1">
