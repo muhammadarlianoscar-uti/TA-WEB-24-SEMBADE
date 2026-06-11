@@ -298,7 +298,10 @@ export default function PotensiPage() {
                   <line x1="0" y1="120" x2="300" y2="120" stroke="#334155" strokeDasharray="4" />
                   <line x1="0" y1="75" x2="300" y2="75" stroke="#334155" strokeDasharray="4" />
                   <line x1="0" y1="30" x2="300" y2="30" stroke="#334155" strokeDasharray="4" />
-                  
+
+                  {/* Batang 2024 */}
+                  <rect x="35" y="85" width="30" height="35" fill="#475569" rx="4" className="hover:fill-emerald-500 transition-colors duration-300 cursor-pointer" />
+
                 </svg>
               </div>
             </div>
