@@ -317,6 +317,7 @@ export default function PotensiPage() {
                   {/* Garis Hubung Tren Ekonomi */}
                   <path d="M 50 100 L 150 75 L 250 35" fill="none" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" />
                   <circle cx="50" cy="100" r="4" fill="#fff" stroke="#f59e0b" strokeWidth="2" />
+                  <circle cx="150" cy="75" r="4" fill="#fff" stroke="#f59e0b" strokeWidth="2" />
                 </svg>
               </div>
             </div>
