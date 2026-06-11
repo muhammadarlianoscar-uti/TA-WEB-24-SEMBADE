@@ -213,6 +213,8 @@ export default function Berita() {
                     className="inline-flex items-center text-sm font-bold text-emerald-600 hover:text-emerald-700 hover:underline gap-1 transition-colors"
                   >
                     Baca Selengkapnya
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    </svg>
                   </Link>
           
                 </div>
