@@ -313,6 +313,10 @@ export default function PotensiPage() {
                   <rect x="235" y="20" width="30" height="100" fill="#10b981" rx="4" className="shadow-lg cursor-pointer" />
                   <text x="250" y="10" textAnchor="middle" fill="#34d399" fontSize="11" className="font-bold">800Jt</text>
                   <text x="250" y="140" textAnchor="middle" fill="#fff" fontSize="12" className="font-bold">2026</text>
+
+                  {/* Garis Hubung Tren Ekonomi */}
+                  <path d="M 50 100 L 150 75 L 250 35" fill="none" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" />
+
                 </svg>
               </div>
             </div>
