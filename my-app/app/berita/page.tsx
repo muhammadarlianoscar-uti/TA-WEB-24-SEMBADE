@@ -55,7 +55,7 @@ const beritaData = [
     title: "Program Penghijauan untuk Mendukung Smart City",
     desc: "Pemerintah desa bersama masyarakat melakukan penanaman pohon untuk menciptakan lingkungan yang lebih hijau dan sehat.",
     captionFoto: "Penanaman 500 bibit pohon mahoni di batas desa.",
-    image: "/images/berita6.jpg",
+    image: "/images/programpenghijuan.webp",
     views: 175,
     date: "25 April 2026",
   },
