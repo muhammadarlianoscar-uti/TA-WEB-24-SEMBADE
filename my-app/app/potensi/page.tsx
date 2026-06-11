@@ -319,6 +319,7 @@ export default function PotensiPage() {
                   <circle cx="50" cy="100" r="4" fill="#fff" stroke="#f59e0b" strokeWidth="2" />
                   <circle cx="150" cy="75" r="4" fill="#fff" stroke="#f59e0b" strokeWidth="2" />
                   <circle cx="250" cy="35" r="4" fill="#fff" stroke="#f59e0b" strokeWidth="2" />
+                  
                 </svg>
               </div>
             </div>
@@ -357,18 +358,8 @@ export default function PotensiPage() {
             
             <div className="lg:w-1/2 w-full">
 
-            {/* membuat area simulasi peta. */}
-              <div className="bg-slate-100 rounded-3xl h-80 md:h-[400px] w-full relative overflow-hidden shadow-inner border border-slate-200/60 flex items-center justify-center">
-
-              {/* membuat pola seperti grid pada peta */}
-                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#4ade80 2px, transparent 2px)', backgroundSize: '30px 30px' }}></div>
-                
-                {/* mesimulasikan lokasi potensi desa */}
-                <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-bounce"></div>
-                <div className="absolute top-1/2 right-1/3 w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-                <div className="absolute bottom-1/3 left-1/2 w-4 h-4 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-bounce" style={{ animationDelay: '0.4s' }}></div>
-                
-                <p className="relative z-10 font-semibold text-slate-400 tracking-widest uppercase">Integrasi Peta Digital (Maps API)</p>
+            {/* UPDATE: Mengganti area peta simulasi menjadi Peta Satelit Google Maps Interaktif Nyata */}
+              <div className="bg-slate-100 rounded-3xl h-80 md:h-[400px] w-full relative overflow-hidden shadow-md border border-slate-200 flex items-center justify-center z-0">
               </div>
             </div>
           </div>
