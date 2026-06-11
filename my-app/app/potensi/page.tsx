@@ -360,6 +360,13 @@ export default function PotensiPage() {
 
             {/* UPDATE: Mengganti area peta simulasi menjadi Peta Satelit Google Maps Interaktif Nyata */}
               <div className="bg-slate-100 rounded-3xl h-80 md:h-[400px] w-full relative overflow-hidden shadow-md border border-slate-200 flex items-center justify-center z-0">
+               <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63535.95999742785!2d105.588238!3d-5.5673845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e411cd15e5a582d%3A0xcbbba66a67c4ecc6!2sBalinuraga%2C%20Kec.%20Way%20Panji%2C%20Kabupaten%20Lampung%20Selatan%2C%20Lampung!5e0!3m2!1sid!2sid!4v1781204217434!5m2!1sid!2sid" 
+                  className="w-full h-full border-0"
+                  allowFullScreen={true}
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </div>
           </div>
