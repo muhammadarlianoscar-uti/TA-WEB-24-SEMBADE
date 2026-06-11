@@ -301,7 +301,7 @@ export default function PotensiPage() {
 
                   {/* Batang 2024 */}
                   <rect x="35" y="85" width="30" height="35" fill="#475569" rx="4" className="hover:fill-emerald-500 transition-colors duration-300 cursor-pointer" />
-
+                  <text x="50" y="75" textAnchor="middle" fill="#10b981" fontSize="10" className="font-bold">200Jt</text>
                 </svg>
               </div>
             </div>
