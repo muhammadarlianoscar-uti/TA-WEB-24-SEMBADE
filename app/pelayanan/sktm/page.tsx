@@ -7,8 +7,6 @@ export default function SKTMPage() {
     name: "",
     nik: "",
     address: "",
-    job: "",
-    income: "",
     purpose: "",
   };
 
@@ -21,7 +19,6 @@ export default function SKTMPage() {
   const [data, setData] = useState(initialData);
   const [files, setFiles] = useState(initialFiles);
 
-  // Ubah fungsi handleFile menjadi begini:
   const handleFile = (e: any) => {
     const { name, files: selectedFiles } = e.target;
     setFiles((prev) => ({ ...prev, [name]: selectedFiles[0] || null }));
@@ -42,27 +39,33 @@ export default function SKTMPage() {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <div className="bg-white p-6 rounded-2xl shadow">
-        <h1 className="text-xl font-bold mb-4">
-          💸 SKTM ( Surat Keterangan Tidak Mampu )
-        </h1>
+    <div className="p-6 max-w-2xl mx-auto">
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+        
+        {/* JUDUL */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-2xl">💸</span>
+          <h1 className="text-2xl font-bold text-emerald-800">Pembuatan SKTM</h1>
+        </div>
 
-        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">Syarat :
-          KTP, KK, Surat pengantar RT
+        {/* SYARAT */}
+        <div className="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-xl mb-8 font-medium shadow-sm">
+          Syarat : Fotokopi KTP, KK & Surat Pengantar RT/RW
         </div>
 
         <form onSubmit={handleSend} autoComplete="off">
-          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-            <p className="font-semibold mb-2">Data Diri</p>
+          
+          {/* DATA DIRI */}
+          <div className="border border-slate-200 p-6 rounded-xl mb-6 bg-slate-50/50">
+            <h2 className="text-lg font-bold text-emerald-700 mb-4">Data Diri</h2>
 
             <input
               name="name"
               value={data.name}
               onChange={handleChange}
-              placeholder="Nama"
+              placeholder="Nama Lengkap"
               required
-              className="w-full border p-2 rounded mb-2"
+              className="w-full border border-slate-300 p-3 rounded-lg mb-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
             />
 
             <input
@@ -71,88 +74,44 @@ export default function SKTMPage() {
               onChange={handleChange}
               placeholder="NIK"
               required
-              className="w-full border p-2 rounded mb-2"
+              className="w-full border border-slate-300 p-3 rounded-lg mb-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
             />
 
             <input
               name="address"
               value={data.address}
               onChange={handleChange}
-              placeholder="Alamat"
+              placeholder="Alamat Lengkap"
               required
-              className="w-full border p-2 rounded"
+              className="w-full border border-slate-300 p-3 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
             />
+          </div>
 
-            <input
+          {/* KEPERLUAN */}
+          <div className="border border-slate-200 p-6 rounded-xl mb-6 bg-slate-50/50">
+            <h2 className="text-lg font-bold text-emerald-700 mb-4">Keperluan</h2>
+
+            <textarea
               name="purpose"
               value={data.purpose}
               onChange={handleChange}
-              placeholder="Keperluan"
               required
-              className="w-full border p-2 mt-2 rounded"
+              className="w-full border border-slate-300 p-3 rounded-lg h-28 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm resize-y"
+              placeholder="Contoh: Pengajuan Beasiswa KIP, Bantuan Sosial, Pengobatan KIS, dll"
             />
           </div>
 
-          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-            <p className="font-semibold mb-2">Kondisi</p>
-
-            {/* Input Pekerjaan */}
-            <input
-              name="job"
-              value={data.job}
-              onChange={handleChange}
-              placeholder="Pekerjaan"
-              required
-              className="w-full border p-2 rounded mb-2"
-            />
-
-            <div className="relative w-full">
-              {/* Dropdown Penghasilan */}
-              <select
-                name="income"
-                value={data.income}
-                onChange={handleChange}
-                required
-                className="w-full appearance-none pr-10 border p-2 rounded bg-white text-gray-700"
-              >
-                <option value="" disabled>
-                  Pilih Penghasilan Per Bulan
-                </option>
-                <option value="< 1jt">Kurang dari Rp 1.000.000</option>
-                <option value="1jt - 2jt">Rp 1.000.000 - Rp 2.000.000</option>
-                <option value="2jt - 3jt">Rp 2.000.000 - Rp 3.000.000</option>
-                <option value="3jt - 5jt">Rp 3.000.000 - Rp 5.000.000</option>
-                <option value="> 5jt">Lebih dari Rp 5.000.000</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500">
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-            <p className="font-semibold mb-3">Upload Dokumen</p>
-
-            <div className="mb-3">
-              <label className="block text-sm text-gray-600 mb-1">
+          {/* UPLOAD DOKUMEN */}
+          <div className="border border-slate-200 p-6 rounded-xl mb-8 bg-slate-50/50">
+            <h2 className="text-lg font-bold text-emerald-700 mb-4">Upload Dokumen</h2>
+            
+            <div className="mb-5">
+              <label className="block text-sm font-semibold text-slate-700 mb-2">
                 Upload KTP
               </label>
-              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
-                <span className="text-sm text-gray-500">
-                  {files.ktp ? files.ktp.name : "Pilih file KTP"}
+              <label className="flex items-center justify-center bg-white border border-dashed border-slate-400 p-4 rounded-lg cursor-pointer hover:bg-slate-100 transition shadow-sm">
+                <span className="text-sm font-medium text-slate-600">
+                  {files.ktp ? `✅ ${files.ktp.name}` : "📁 Pilih file KTP"}
                 </span>
                 <input
                   type="file"
@@ -165,13 +124,13 @@ export default function SKTMPage() {
               </label>
             </div>
 
-            <div className="mb-3">
-              <label className="block text-sm text-gray-600 mb-1">
-                Upload KK
+            <div className="mb-5">
+              <label className="block text-sm font-semibold text-slate-700 mb-2">
+                Upload Kartu Keluarga (KK)
               </label>
-              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
-                <span className="text-sm text-gray-500">
-                  {files.kk ? files.kk.name : "Pilih file KK"}
+              <label className="flex items-center justify-center bg-white border border-dashed border-slate-400 p-4 rounded-lg cursor-pointer hover:bg-slate-100 transition shadow-sm">
+                <span className="text-sm font-medium text-slate-600">
+                  {files.kk ? `✅ ${files.kk.name}` : "📁 Pilih file KK"}
                 </span>
                 <input
                   type="file"
@@ -185,14 +144,12 @@ export default function SKTMPage() {
             </div>
 
             <div>
-              <label className="block text-sm text-gray-600 mb-1">
-                Upload Surat pengantar RT
+              <label className="block text-sm font-semibold text-slate-700 mb-2">
+                Upload Surat Pengantar RT/RW
               </label>
-              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
-                <span className="text-sm text-gray-500">
-                  {files.suratRt
-                    ? files.suratRt.name
-                    : "Pilih file Surat pengantar RT"}
+              <label className="flex items-center justify-center bg-white border border-dashed border-slate-400 p-4 rounded-lg cursor-pointer hover:bg-slate-100 transition shadow-sm">
+                <span className="text-sm font-medium text-slate-600">
+                  {files.suratRt ? `✅ ${files.suratRt.name}` : "📁 Pilih file Pengantar RT"}
                 </span>
                 <input
                   type="file"
@@ -206,15 +163,20 @@ export default function SKTMPage() {
             </div>
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700 transition mb-4"
+          <button 
+            type="submit" 
+            className="w-full bg-emerald-600 text-white font-bold p-4 rounded-xl hover:bg-emerald-700 transition shadow-md mb-6 text-lg"
           >
-            Kirim Pengajuan
+            Kirim Pengajuan SKTM
           </button>
 
-          <BackButton />
         </form>
+
+        {/* Tombol Back di luar form agar posisinya sejajar dan rapi */}
+        <div className="flex justify-center border-t border-slate-100 pt-6">
+          <BackButton />
+        </div>
+
       </div>
     </div>
   );
