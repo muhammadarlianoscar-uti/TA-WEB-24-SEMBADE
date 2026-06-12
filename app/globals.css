@@ -67,9 +67,10 @@ footer {
 }
 
 /* CONTENT */
+/* CONTENT */
 .content {
   max-width: 1200px;
-  margin: 2.5em auto; 
+  margin: 0 auto 0 auto; 
   padding: 0 1.5em;
   color: #065f46;
   text-align: justify;
