@@ -42,11 +42,10 @@ export default function RootLayout({
         </header>
 
         <Navbar />
-
-
-
+      
         <main className="content">
           {children}
+          
         </main>
         {/* membuat footer */}
         <footer>Copyright &copy; SMARTDES 2026</footer>
