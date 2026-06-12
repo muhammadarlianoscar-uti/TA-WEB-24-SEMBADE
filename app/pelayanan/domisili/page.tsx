@@ -38,27 +38,34 @@ export default function DomisiliPage() {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto">
-      <div className="bg-white p-6 rounded-2xl shadow">
-        <h1 className="text-xl font-bold mb-4">📄 Surat Domisili</h1>
+    <div className="p-6 max-w-2xl mx-auto">
+      <div className="bg-white p-8 rounded-2xl shadow-lg border border-slate-100">
+        
+        {/* JUDUL */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="text-2xl">📄</span>
+          <h1 className="text-2xl font-bold text-emerald-800">Surat Domisili</h1>
+        </div>
 
         {/* SYARAT */}
-        <div className="bg-yellow-50 border p-3 rounded mb-4 text-sm">Syarat :
-          Fotokopi KTP & KK
+        <div className="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-xl mb-8 font-medium shadow-sm">
+          Syarat : Fotokopi KTP & KK
         </div>
 
         <form onSubmit={handleSend} autoComplete="off">
-          {/* DATA */}
-          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-            <p className="font-semibold mb-2">Data Diri</p>
+          
+          {/* DATA DIRI */}
+          <div className="border border-slate-200 p-6 rounded-xl mb-6 bg-slate-50/50">
+            <h2 className="text-lg font-bold text-emerald-700 mb-4">Data Diri</h2>
 
             <input
               name="name"
               value={data.name}
-              placeholder="Nama"
+              placeholder="Nama Lengkap"
               onChange={handleChange}
               required
-              className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
+              // PERBAIKAN: Teks diubah jadi hitam pekat (text-slate-800) dan border jelas (border-slate-300)
+              className="w-full border border-slate-300 p-3 rounded-lg mb-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
             />
 
             <input
@@ -67,44 +74,44 @@ export default function DomisiliPage() {
               placeholder="NIK"
               onChange={handleChange}
               required
-              className="w-full border p-2 rounded mb-2 focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-slate-300 p-3 rounded-lg mb-4 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
             />
 
             <input
               name="address"
               value={data.address}
-              placeholder="Alamat"
+              placeholder="Alamat Lengkap"
               onChange={handleChange}
               required
-              className="w-full border p-2 rounded focus:ring-2 focus:ring-green-400 outline-none"
+              className="w-full border border-slate-300 p-3 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm"
             />
           </div>
 
           {/* KEPERLUAN */}
-          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-            <p className="font-semibold mb-2">Keperluan</p>
+          <div className="border border-slate-200 p-6 rounded-xl mb-6 bg-slate-50/50">
+            <h2 className="text-lg font-bold text-emerald-700 mb-4">Keperluan</h2>
 
             <textarea
               name="purpose"
               value={data.purpose}
               onChange={handleChange}
               required
-              className="w-full border p-2 rounded h-24 focus:ring-2 focus:ring-green-400 outline-none"
-              placeholder="Contoh: untuk melamar kerja"
+              placeholder="Contoh: untuk melamar kerja / pendaftaran sekolah"
+              className="w-full border border-slate-300 p-3 rounded-lg h-28 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white shadow-sm resize-y"
             />
           </div>
 
           {/* UPLOAD */}
-          <div className="bg-gray-50 border p-4 rounded-xl mb-4">
-            <p className="font-semibold mb-2">Upload Dokumen</p>
+          <div className="border border-slate-200 p-6 rounded-xl mb-8 bg-slate-50/50">
+            <h2 className="text-lg font-bold text-emerald-700 mb-4">Upload Dokumen</h2>
 
-            <div className="mb-3">
-              <label className="block text-sm text-gray-600 mb-1">
+            <div className="mb-5">
+              <label className="block text-sm font-semibold text-slate-700 mb-2">
                 Upload KTP
               </label>
-              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
-                <span className="text-sm text-gray-500">
-                  {files.ktp ? files.ktp.name : "Pilih file KTP"}
+              <label className="flex items-center justify-center bg-white border border-dashed border-slate-400 p-4 rounded-lg cursor-pointer hover:bg-slate-100 transition shadow-sm">
+                <span className="text-sm font-medium text-slate-600">
+                  {files.ktp ? `✅ ${files.ktp.name}` : "📁 Pilih file KTP"}
                 </span>
                 <input
                   type="file"
@@ -118,12 +125,12 @@ export default function DomisiliPage() {
             </div>
 
             <div>
-              <label className="block text-sm text-gray-600 mb-1">
+              <label className="block text-sm font-semibold text-slate-700 mb-2">
                 Upload KK
               </label>
-              <label className="flex items-center justify-center bg-white border border-gray-300 p-2.5 rounded-lg cursor-pointer hover:bg-gray-100 transition">
-                <span className="text-sm text-gray-500">
-                  {files.kk ? files.kk.name : "Pilih file KK"}
+              <label className="flex items-center justify-center bg-white border border-dashed border-slate-400 p-4 rounded-lg cursor-pointer hover:bg-slate-100 transition shadow-sm">
+                <span className="text-sm font-medium text-slate-600">
+                  {files.kk ? `✅ ${files.kk.name}` : "📁 Pilih file KK"}
                 </span>
                 <input
                   type="file"
@@ -139,13 +146,15 @@ export default function DomisiliPage() {
 
           <button
             type="submit"
-            className="w-full bg-green-600 text-white p-3 rounded-xl hover:bg-green-700 mb-4"
+            className="w-full bg-emerald-600 text-white font-bold p-4 rounded-xl hover:bg-emerald-700 transition shadow-md mb-6 text-lg"
           >
-            Kirim
+            Kirim Pengajuan
           </button>
         </form>
 
-        <BackButton />
+        <div className="flex justify-center border-t border-slate-100 pt-6">
+          <BackButton />
+        </div>
       </div>
     </div>
   );
