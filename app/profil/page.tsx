@@ -246,7 +246,7 @@ export default function Profil() {
               {/* Alamat */}
               <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
                 <p className="font-semibold text-emerald-300 mb-1">📍 Alamat</p>
-                <p>Jl. Raya SmartDes No. 1, Kecamatan Maju, Kab. Sejahtera</p>
+                <p>Balinuraga, Kec. Way Panji, Kabupaten Lampung Selatan, Lampung</p>
               </div>
               {/* Jam Operasional (<br/> = perintah ganti baris baru/enter dalam teks HTML) */}
               <div className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
