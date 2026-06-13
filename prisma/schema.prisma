@@ -4,12 +4,80 @@
 // Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
-generator client {
-  provider = "prisma-client"
-  output   = "../app/generated/prisma"
-}
-
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 👤 TABEL USER UTAMA
+model User {
+  id        String   @id @default(uuid())
+  nik       String   @unique // Wajib 16 digit, digunakan untuk login
+  username  String   @unique // Digunakan untuk login alternatif
+  password  String   // Password yang sudah di-hash (bcrypt)
+  nama      String   // Nama lengkap warga
+  role      Role     @default(warga) // 'warga' atau 'admin'
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Data Profil Tambahan Opsional
+  email     String?  @unique
+  noTelepon String?
+  alamat    String?
+
+  // Relasi ke tabel pengajuan pelayanan & pengaduan
+  pengajuan PengajuanSurat[]
+  pengaduan Pengaduan[]
+}
+
+enum Role {
+  warga
+  admin
+}
+
+enum StatusPengajuan {
+  PENDING
+  DIPROSES
+  SELESAI
+  DITOLAK
+}
+
+// 📋 TABEL PENGAJUAN SURAT (Struktur Bersih & Terbuka)
+model PengajuanSurat {
+  id              String          @id @default(uuid())
+  nik             String          // NIK yang tertulis di form
+  nama            String          // Nama yang tertulis di form
+  alamat          String          // Alamat yang tertulis di form
+  jenisLayanan    String          // Menampung "domisili", "ktp", "kk", atau "sktm"
+  keperluan       String          @db.Text
+  fileKtp         String?         // Menyimpan lokasi/path file KTP
+  fileKk          String?         // Menyimpan lokasi/path file KK
+  fileRt          String?         // Menyimpan lokasi/path file Pengantar RT
+  status          StatusPengajuan @default(PENDING)
+  alasanPenolakan String?         // Diisi jika admin menolak berkas
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  // Hubungan ke user yang login saat mengajukan
+  userId          String
+  user            User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// 📢 TABEL PENGADUAN MASYARAKAT
+model Pengaduan {
+  id        String   @id @default(uuid())
+  nama      String
+  kategori  String
+  alamat    String
+  deskripsi String   @db.Text
+  fileBukti String?
+  createdAt DateTime @default(now())
+
+  // Hubungan ke user (opsional, agar admin tahu akun siapa yang melapor)
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
 }
