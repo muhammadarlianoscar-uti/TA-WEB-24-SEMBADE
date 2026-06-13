@@ -52,3 +52,14 @@ export default function HalamanRegister() {
         setNik('');
         setUsername('');
         setPassword('');
+
+        // Pindah ke halaman login setelah 2 detik sukses
+        setTimeout(() => {
+          router.push('/login');
+        }, 2000);
+      }
+    } catch (err) {
+      setError('Gagal terhubung ke server. Periksa koneksi internet Anda.');
+      setIsLoading(false);
+    }
+  };
