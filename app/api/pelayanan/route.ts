@@ -36,3 +36,24 @@ export async function POST(request: Request) {
       await writeFile(path, buffer);
       return `/uploads/${filename}`;
     };
+
+    // FORM PENGADUAN
+    if (actionType === "pengaduan") {
+      const category = formData.get("category") as string;
+      const imageFile = formData.get("image") as File | null;
+      const imagePath = await saveFile(imageFile);
+
+      await prisma.pengaduan.create({
+        data: {
+          nama: name,
+          kategori: category,
+          alamat: address,
+          deskripsi: purpose,
+          fileBukti: imagePath,
+          // notes Opsional: Hubungkan pengaduan ke userId jika skema prisma mendukung relasi ini
+          // userId: session.user.id
+        },
+      });
+
+      return NextResponse.json({ success: true, message: "Laporan pengaduan warga berhasil dikirim!" });
+    }
