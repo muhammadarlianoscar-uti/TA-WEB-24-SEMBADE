@@ -15,3 +15,24 @@ export async function POST(request: Request) {
         { status: 401 }
       );
     }
+
+    const formData = await request.formData();
+    const actionType = formData.get("actionType") as string;
+    const name = formData.get("name") as string;
+    const address = formData.get("address") as string;
+    const purpose = formData.get("purpose") as string;
+
+    // Persiapan Folder Unggahan Berkas di Sisi Server
+    const uploadDir = join(process.cwd(), "public", "uploads");
+    await mkdir(uploadDir, { recursive: true });
+
+    // Fungsi Pembantu untuk Menyimpan File ke Penyimpanan Lokal Server
+    const saveFile = async (file: File | null) => {
+      if (!file || file.size === 0) return null;
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
+      const filename = `${Date.now()}-${file.name.replace(/\s+/g, "_")}`;
+      const path = join(uploadDir, filename);
+      await writeFile(path, buffer);
+      return `/uploads/${filename}`;
+    };
