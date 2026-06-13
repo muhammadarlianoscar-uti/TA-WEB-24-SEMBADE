@@ -1,212 +1,112 @@
 'use client';
 
 import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function HalamanRegister() {
+export default function LoginPage() {
   const router = useRouter();
-
-  // State Form & UI
-  const [nama, setNama] = useState('');
-  const [nik, setNik] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
+  const [formData, setFormData] = useState({
+    username: '',
+    password: '',
+  });
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError('');
-    setSuccess('');
-    
-    // Validasi Panjang NIK di Frontend
-    if (nik.length !== 16) {
-      setError('Nomor Induk Kependudukan (NIK) harus tepat 16 digit.');
-      setIsLoading(false);
-      return;
-    }
 
     try {
-      const res = await fetch('/api/auth/register', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nama, nik, username, password }),
+      const res = await signIn('credentials', {
+        username: formData.username,
+        password: formData.password,
+        redirect: false, // Mencegah reload halaman otomatis
       });
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        setError(data.error || 'Terjadi kesalahan saat mendaftar.');
-        setIsLoading(false);
+      if (res?.error) {
+        setError('Username atau password salah!');
       } else {
-        setSuccess('Registrasi berhasil! Mengalihkan ke halaman masuk...');
-
-        // Reset Form
-        setNama('');
-        setNik('');
-        setUsername('');
-        setPassword('');
-
-        // Pindah ke halaman login setelah 2 detik sukses
-        setTimeout(() => {
-          router.push('/login');
-        }, 2000);
+        router.push('/home'); // Alihkan ke beranda jika login sukses
+        router.refresh();
       }
     } catch (err) {
-      setError('Gagal terhubung ke server. Periksa koneksi internet Anda.');
+      setError('Terjadi kesalahan sistem. Silakan coba lagi.');
+    } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-emerald-950 via-emerald-900 to-slate-900 flex items-center justify-center p-4 font-sans selection:bg-emerald-500 selection:text-white">
-      
-      {/* KARTU REGISTRASI UTAMA */}
-      <div className="w-full max-w-md bg-white/95 backdrop-blur-md rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/20 p-8 sm:p-10 space-y-6 animate-in fade-in zoom-in-95 duration-300">
+    <div className="min-h-screen bg-slate-50 flex flex-col justify-center items-center p-4">
+      <div className="bg-white w-full max-w-md rounded-2xl shadow-xl border border-slate-100 overflow-hidden p-8 text-slate-700">
         
-        {/* LOGO & BRANDING */}
-        <div className="text-center space-y-2">
-          <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl mx-auto shadow-md shadow-emerald-900/20">
-            S
-          </div>
-          <h2 className="text-xl font-black text-slate-800 tracking-tight mt-3">
-            Pendaftaran Warga
-          </h2>
-          <p className="text-xs text-slate-400 font-medium">
-            Buat akun resmi untuk mengakses layanan administrasi desa
-          </p>
+        {/* LOGO & JUDUL */}
+        <div className="text-center mb-6">
+          <h2 className="text-2xl font-black text-emerald-700 tracking-wide">🏠 SMARTDES</h2>
+          <p className="text-xs text-slate-400 mt-1">Silakan masuk untuk mengakses layanan digital desa</p>
         </div>
 
-        {/* NOTIFIKASI ERROR / SUKSES */}
+        {/* NOTIFIKASI ERROR */}
         {error && (
-          <div className="p-3.5 bg-rose-50 border border-rose-200 rounded-2xl flex items-start gap-2.5 text-xs text-rose-800 font-medium">
-            <span className="text-sm shrink-0">⚠️</span>
-            <p>{error}</p>
+          <div className="mb-4 p-3 bg-rose-50 border border-rose-200 text-rose-800 rounded-xl text-xs font-medium">
+            ⚠️ {error}
           </div>
         )}
 
-        {success && (
-          <div className="p-3.5 bg-emerald-50 border border-emerald-200 rounded-2xl flex items-start gap-2.5 text-xs text-emerald-800 font-medium">
-            <span className="text-sm shrink-0">✅</span>
-            <p>{success}</p>
-          </div>
-        )}
-
-{/* FORM REGISTRASI */}
+        {/* FORM LOGIN */}
         <form onSubmit={handleSubmit} className="space-y-4 text-xs">
-          
-          {/* Kolom Nama Lengkap */}
-          <div className="space-y-1.5">
-            <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
-              Nama Lengkap (Sesuai KTP)
-            </label>
-            <div className="relative">
-              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">📝</span>
-              <input
-                type="text"
-                required
-                value={nama}
-                onChange={(e) => setNama(e.target.value)}
-                placeholder="Masukkan nama lengkap Anda"
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
-              />
-            </div>
+          <div>
+            <label className="block font-bold text-slate-500 mb-1">Username Akun</label>
+            <input
+              type="text"
+              required
+              disabled={isLoading}
+              value={formData.username}
+              onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+              className="w-full p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none text-slate-800 font-medium"
+              placeholder="Masukkan username Anda"
+            />
           </div>
 
-          {/* Kolom NIK */}
-          <div className="space-y-1.5">
-            <div className="flex justify-between items-center">
-              <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
-                Nomor Induk Kependudukan (NIK)
-              </label>
-              <span className={`font-bold text-[10px] tracking-wider ${nik.length === 16 ? 'text-emerald-600' : 'text-slate-400'}`}>
-                {nik.length}/16 DIGIT
-              </span>
-            </div>
-            <div className="relative">
-              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">🪪</span>
-              <input
-                type="text"
-                maxLength={16}
-                required
-                value={nik}
-                // Hanya mengizinkan karakter angka murni saat diketik
-                onChange={(e) => setNik(e.target.value.replace(/\D/g, ''))}
-                placeholder="Masukkan 16 digit nomor NIK KTP"
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
-              />
-            </div>
+          <div>
+            <label className="block font-bold text-slate-500 mb-1">Kata Sandi</label>
+            <input
+              type="password"
+              required
+              disabled={isLoading}
+              value={formData.password}
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              className="w-full p-3 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none text-slate-800 font-medium"
+              placeholder="••••••••"
+            />
           </div>
 
-          {/* Kolom Username */}
-          <div className="space-y-1.5">
-            <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
-              Nama Pengguna (Username)
-            </label>
-            <div className="relative">
-              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">👤</span>
-              <input
-                type="text"
-                required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                placeholder="Buat username unik (tanpa spasi)"
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
-              />
-            </div>
-          </div>
-
-          {/* Kolom Kata Sandi */}
-          <div className="space-y-1.5">
-            <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
-              Kata Sandi
-            </label>
-            <div className="relative">
-              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">🔒</span>
-              <input
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Buat kata sandi minimal 6 karakter"
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
-              />
-            </div>
-          </div>
-
-{isLoading ? (
-              <div className="flex items-center justify-center gap-2">
-                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                <span>MEMPROSES PENDAFTARAN...</span>
-              </div>
-            ) : (
-              'DAFTAR AKUN SEKARANG ↗'
-            )}
+          {/* 🔘 TOMBOL SUBMIT */}
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold transition-all disabled:opacity-50 active:scale-[0.99] tracking-wider mt-2"
+          >
+            {isLoading ? 'MEMPROSES MASUK...' : 'MASUK AKUN SEKARANG ↗'}
           </button>
         </form>
 
-        {/* SEPARATOR */}
-        <div className="relative flex py-1 items-center">
+        {/* SEPARATOR BORDER */}
+        <div className="relative flex py-4 items-center">
           <div className="flex-grow border-t border-slate-100"></div>
-          <span className="flex-shrink mx-4 text-[10px] text-slate-300 font-bold uppercase tracking-widest">Sudah Terdaftar</span>
+          <span className="flex-shrink mx-4 text-slate-300 font-bold text-[10px] tracking-widest">ATAU</span>
           <div className="flex-grow border-t border-slate-100"></div>
         </div>
 
-        {/* FOOTER LINK BALIK KE LOGIN */}
-        <div className="text-center text-xs">
-          <p className="text-slate-400 font-medium">
-            Sudah memiliki akun warga?{' '}
-            <Link 
-              href="/login" 
-              className="font-extrabold text-emerald-600 hover:text-emerald-700 transition-colors bg-emerald-50 px-2.5 py-1 rounded-lg"
-            >
-              Masuk Aplikasi
+        {/* LINK NAVIGASI DAFTAR */}
+        <div className="text-center">
+          <p className="text-slate-400 text-xs">
+            Belum terdaftar sebagai warga digital?{' '}
+            <Link href="login/register" className="text-emerald-600 hover:text-emerald-700 font-bold underline transition-colors">
+              Buat Akun Baru
             </Link>
           </p>
         </div>

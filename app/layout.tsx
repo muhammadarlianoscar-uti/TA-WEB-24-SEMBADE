@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-import Navbar from "./components/navbar";
-
-
+import Providers from "./components/providers"; // Menggunakan huruf kecil 'providers'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +12,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-
 
 export const metadata: Metadata = {
   title: "SmartDes - Smart Village",
@@ -34,20 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* membuat header  */}
-        <header>
-          <div className="header-right">
-            <span className="header-title">SmartDes</span>
-          </div>
-        </header>
-
-        <Navbar />
-      
-       <main className="w-full">
+        {/* Membungkus seluruh aplikasi dengan struktur Providers */}
+        <Providers>
           {children}
-        </main>
-        {/* membuat footer */}
-        <footer>Copyright &copy; SMARTDES 2026</footer>
+        </Providers>
       </body>
     </html>
   );
