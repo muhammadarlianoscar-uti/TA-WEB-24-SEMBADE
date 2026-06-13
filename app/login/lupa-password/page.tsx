@@ -147,6 +147,34 @@ export default function HalamanLupaPassword() {
               />
             </div>
           </div>
+
+          {/* BUTTON SUBMIT */}
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold py-3.5 rounded-2xl shadow-lg shadow-emerald-900/20 transition-all transform active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed tracking-wider mt-2"
+          >
+            {isLoading ? (
+              <div className="flex items-center justify-center gap-2">
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span>MENYIMPAN SANDI BARU...</span>
+              </div>
+            ) : (
+              "RESET KATA SANDI ↗"
+            )}
+          </button>
+        </form>
+
+        {/* FOOTER LINK BALIK KE LOGIN */}
+        <div className="border-t border-slate-100 pt-4 text-center text-xs">
+          <Link
+            href="/login"
+            className="inline-block font-extrabold text-emerald-600 hover:text-emerald-700 transition-colors bg-emerald-50 px-3 py-1.5 rounded-lg"
+          >
+            ← Kembali Ke Login
+          </Link>
+        </div>
+
       </div>
     </div>
   );
