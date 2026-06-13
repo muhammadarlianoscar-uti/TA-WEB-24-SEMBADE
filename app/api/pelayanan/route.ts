@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma"; // Diselaraskan menggunakan named import sesuai kode kamu sebelumnya
+import { prisma } from "@/lib/prisma";
 import { writeFile, mkdir } from "fs/promises";
 import { join } from "path";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route"; // Sesuaikan jalur lokasi authOptions milikmu
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"; 
 
 export async function POST(request: Request) {
   try {
@@ -11,8 +11,11 @@ export async function POST(request: Request) {
     const session = await getServerSession(authOptions);
     if (!session || !session.user) {
       return NextResponse.json(
-        { success: false, message: "Akses ditolak. Silakan masuk akun terlebih dahulu." },
-        { status: 401 }
+        {
+          success: false,
+          message: "Akses ditolak. Silakan masuk akun terlebih dahulu.",
+        },
+        { status: 401 },
       );
     }
 
@@ -55,5 +58,48 @@ export async function POST(request: Request) {
         },
       });
 
-      return NextResponse.json({ success: true, message: "Laporan pengaduan warga berhasil dikirim!" });
+      return NextResponse.json({
+        success: true,
+        message: "Laporan pengaduan warga berhasil dikirim!",
+      });
     }
+
+    // FORM ADMINISTRASI
+    const nik = formData.get("nik") as string;
+    const type = formData.get("type") as string;
+
+    const fileKtpPath = await saveFile(formData.get("ktp") as File | null);
+    const fileKkPath = await saveFile(formData.get("kk") as File | null);
+    const fileRtPath = await saveFile(formData.get("suratRt") as File | null);
+
+    // Memasukkan teks formulir secara dinamis ke dalam format struktur JSON
+    const isiJsonForm = {
+      nama: name,
+      nik: nik,
+      alamat: address,
+      keperluan: purpose,
+    };
+
+    await prisma.pengajuan.create({
+      data: {
+        jenisLayanan: type,
+        dataForm: isiJsonForm, // Masuk langsung ke kolom Json PostgreSQL
+        fileKtp: fileKtpPath,
+        fileKk: fileKkPath,
+        fileRt: fileRtPath,
+        userId: session.user.id, // Menghubungkan secara akurat ke ID Warga yang sedang login
+      },
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: "Berkas pengajuan administrasi berhasil disimpan!",
+    });
+  } catch (error) {
+    console.error("PELAYANAN_API_ERROR:", error);
+    return NextResponse.json(
+      { success: false, message: "Terjadi gangguan server internal." },
+      { status: 500 },
+    );
+  }
+}
