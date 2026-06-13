@@ -98,3 +98,85 @@ export default function HalamanRegister() {
           </div>
         )}
 
+{/* FORM REGISTRASI */}
+        <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+          
+          {/* Kolom Nama Lengkap */}
+          <div className="space-y-1.5">
+            <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
+              Nama Lengkap (Sesuai KTP)
+            </label>
+            <div className="relative">
+              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">📝</span>
+              <input
+                type="text"
+                required
+                value={nama}
+                onChange={(e) => setNama(e.target.value)}
+                placeholder="Masukkan nama lengkap Anda"
+                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          {/* Kolom NIK */}
+          <div className="space-y-1.5">
+            <div className="flex justify-between items-center">
+              <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
+                Nomor Induk Kependudukan (NIK)
+              </label>
+              <span className={`font-bold text-[10px] tracking-wider ${nik.length === 16 ? 'text-emerald-600' : 'text-slate-400'}`}>
+                {nik.length}/16 DIGIT
+              </span>
+            </div>
+            <div className="relative">
+              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">🪪</span>
+              <input
+                type="text"
+                maxLength={16}
+                required
+                value={nik}
+                // Hanya mengizinkan karakter angka murni saat diketik
+                onChange={(e) => setNik(e.target.value.replace(/\D/g, ''))}
+                placeholder="Masukkan 16 digit nomor NIK KTP"
+                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          {/* Kolom Username */}
+          <div className="space-y-1.5">
+            <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
+              Nama Pengguna (Username)
+            </label>
+            <div className="relative">
+              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">👤</span>
+              <input
+                type="text"
+                required
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Buat username unik (tanpa spasi)"
+                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
+              />
+            </div>
+          </div>
+
+          {/* Kolom Kata Sandi */}
+          <div className="space-y-1.5">
+            <label className="block font-bold text-slate-500 tracking-wide uppercase text-[10px]">
+              Kata Sandi
+            </label>
+            <div className="relative">
+              <span className="absolute left-3.5 top-3 text-slate-400 text-sm">🔒</span>
+              <input
+                type="password"
+                required
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Buat kata sandi minimal 6 karakter"
+                className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200/80 rounded-2xl font-medium text-slate-800 placeholder-slate-400 focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 focus:outline-none transition-all"
+              />
+            </div>
+          </div>
+
