@@ -180,3 +180,38 @@ export default function HalamanRegister() {
             </div>
           </div>
 
+{isLoading ? (
+              <div className="flex items-center justify-center gap-2">
+                <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <span>MEMPROSES PENDAFTARAN...</span>
+              </div>
+            ) : (
+              'DAFTAR AKUN SEKARANG ↗'
+            )}
+          </button>
+        </form>
+
+        {/* SEPARATOR */}
+        <div className="relative flex py-1 items-center">
+          <div className="flex-grow border-t border-slate-100"></div>
+          <span className="flex-shrink mx-4 text-[10px] text-slate-300 font-bold uppercase tracking-widest">Sudah Terdaftar</span>
+          <div className="flex-grow border-t border-slate-100"></div>
+        </div>
+
+        {/* FOOTER LINK BALIK KE LOGIN */}
+        <div className="text-center text-xs">
+          <p className="text-slate-400 font-medium">
+            Sudah memiliki akun warga?{' '}
+            <Link 
+              href="/login" 
+              className="font-extrabold text-emerald-600 hover:text-emerald-700 transition-colors bg-emerald-50 px-2.5 py-1 rounded-lg"
+            >
+              Masuk Aplikasi
+            </Link>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  );
+}
