@@ -22,6 +22,7 @@ export default function HalamanRegister() {
     setIsLoading(true);
     setError('');
     setSuccess('');
+    
     // Validasi Panjang NIK di Frontend
     if (nik.length !== 16) {
       setError('Nomor Induk Kependudukan (NIK) harus tepat 16 digit.');
@@ -45,3 +46,9 @@ export default function HalamanRegister() {
         setIsLoading(false);
       } else {
         setSuccess('Registrasi berhasil! Mengalihkan ke halaman masuk...');
+
+        // Reset Form
+        setNama('');
+        setNik('');
+        setUsername('');
+        setPassword('');
